@@ -14,7 +14,7 @@
     <source media="(prefers-color-scheme: dark)"
       srcset="https://img.shields.io/badge/-%20-21262D?style=flat-square" />
     <img src="https://img.shields.io/badge/-%20-E5E7EB?style=flat-square"
-      height="1" width="480" />
+      height="1" width="460" />
   </picture>
 
   <br/>
@@ -56,7 +56,7 @@
     <source media="(prefers-color-scheme: dark)"
       srcset="https://img.shields.io/badge/-%20-21262D?style=flat-square" />
     <img src="https://img.shields.io/badge/-%20-E5E7EB?style=flat-square"
-      height="1" width="480" />
+      height="1" width="460" />
   </picture>
 
   <br/>
