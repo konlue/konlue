@@ -1,6 +1,76 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&speed=40&color=0969DA&width=700&height=50&center=true&lines=Hi%2C+I%27m+konlue.+Walking+in+AI+Full-Stack.&repeat=false&loop=false)](https://git.io/typing-svg)
+<div align="center">
 
-<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" align="absmiddle" /> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" align="absmiddle" /> <img src="https://img.shields.io/badge/LangChain-1C3C6C?style=flat-square&logo=langchain&logoColor=white" align="absmiddle" /> <img src="https://img.shields.io/badge/LangGraph-FF6B6B?style=flat-square&logo=langgraph&logoColor=white" align="absmiddle" />&nbsp;&nbsp;|&nbsp;&nbsp;<img src="https://img.shields.io/badge/Vue-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white" align="absmiddle" /> <img src="https://img.shields.io/badge/Element%20Plus-409EFF?style=flat-square&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik04MzkuNyA3MzQuN2MwIDMzLjMtMTcuOSA0MS0xNy45IDQxUzUxOS43IDk0OS44IDQ5OS4yIDk2MGEzMyAzMyAwIDAgMS0zMC43IDBTMTUzLjYgNzc1LjcgMTQzLjQgNzY4YTU2IDU2IDAgMCAxLTEyLjgtMjAuNVYzNjguNmMwLTE3LjkgMjAuNS0yOC4yIDIwLjUtMjguMkw0NjYgMTU4LjZxMTkuMi03LjYgMzguNCAwczI3OSAxNjEuMyAzMDkuOCAxNzkuMmE0MyA0MyAwIDAgMSAyNS42IDQ2LjFjLS4xLTUtLjEgMzE3LjUtLjEgMzUwLjhNNzE0LjIgMzcxLjJjLTY0LTM1LjgtMjE3LjYtMTI1LjQtMjE3LjYtMTI1LjRjLTcuNy01LjEtMjAuNS01LjEtMzAuNyAwTDIxNy42IDM4OS4xcy0xNy45IDEwLjItMTcuOSAyM3YyOTdjMCA1LjEgNS4xIDEyLjggNy43IDE3LjljNy43IDUuMSAyNTYgMTQ4LjUgMjU2IDE0OC41YTIzIDIzIDAgMCAwIDI1LjYgMGMxNS40LTcuNyAyNTAuOS0xNDUuOSAyNTAuOS0xNDUuOXMxMi44LTUuMSAxMi44LTMwLjd2LTc0LjJsLTI3Ni41IDE2OXYtNjRjMC0xNy45IDcuNy0zMC43IDIwLjUtNDYuMUw3NDUgNTM1YTYzIDYzIDAgMCAwIDEwLjItMzAuN3YtNjYuNmwtMjc5IDE2OXYtNjkuMWMwLTE1LjQgNS4xLTMwLjcgMTcuOS0zOC40ek05MTkgMTM1LjdjMC01LjEtNS4xLTcuNy03LjctNy43aC01OC45VjY2LjZjMC01LjEtNS4xLTUuMS0xMC4yLTUuMWwtMzAuNyA1LjFjLTUuMSAwLTUuMSAyLjYtNS4xIDUuMVYxMjhoLTU2LjNjLTUuMSAwLTUuMSA1LjEtNy43IDUuMXYzOC40aDY5LjF2NjRjMCA1LjEgNS4xIDUuMSAxMC4yIDUuMWwzMC43LTUuMWM1LjEgMCA1LjEtMi42IDUuMS01LjF2LTU2LjNoNjR6Ii8%2BPC9zdmc%2B" align="absmiddle" />&nbsp;&nbsp;|&nbsp;&nbsp;<img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTguODUxIDE4LjU2cy0uOTE3LjUzNC42NTMuNzE0YzEuOTAyLjIxOCAyLjg3NC4xODcgNC45NjktLjIxMSAwIDAgLjU1Mi4zNDYgMS4zMjEuNjQ2LTQuNjk5IDIuMDEzLTEwLjYzMy0uMTE4LTYuOTQzLTEuMTQ5TTguMjc2IDE1LjkzM3MtMS4wMjguNzYxLjU0Mi45MjRjMi4wMzIuMjA5IDMuNjM2LjIyNyA2LjQxMy0uMzA4IDAgMCAuMzg0LjM4OS45ODcuNjAyLTUuNjc5IDEuNjYxLTEyLjAwNy4xMy03Ljk0Mi0xLjIxOE0xMy4xMTYgMTEuNDc1YzEuMTU4IDEuMzMzLS4zMDQgMi41MzMtLjMwNCAyLjUzM3MyLjkzOS0xLjUxOCAxLjU4OS0zLjQxOGMtMS4yNjEtMS43NzItMi4yMjgtMi42NTIgMy4wMDctNS42ODggMC0uMDAxLTguMjE2IDIuMDUxLTQuMjkyIDYuNTczTTE5LjMzIDIwLjUwNHMuNjc5LjU1OS0uNzQ3Ljk5MWMtMi43MTIuODIyLTExLjI4OCAxLjA2OS0xMy42NjkuMDMzLS44NTYtLjM3My43NS0uODkgMS4yNTQtLjk5OC41MjctLjExNC44MjgtLjA5My44MjgtLjA5My0uOTUzLS42NzEtNi4xNTYgMS4zMTctMi42NDMgMS44ODcgOS41OCAxLjU1MyAxNy40NjItLjcgMTQuOTc3LTEuODJNOS4yOTIgMTMuMjFzLTQuMzYyIDEuMDM2LTEuNTQ0IDEuNDEyYzEuMTg5LjE1OSAzLjU2MS4xMjMgNS43Ny0uMDYyIDEuODA2LS4xNTIgMy42MTgtLjQ3NyAzLjYxOC0uNDc3cy0uNjM3LjI3Mi0xLjA5OC41ODdjLTQuNDI5IDEuMTY1LTEyLjk4Ni42MjMtMTAuNTIyLS41NjggMi4wODItMS4wMDYgMy43NzYtLjg5MiAzLjc3Ni0uODkyTTE3LjExNiAxNy41ODRjNC41MDMtMi4zNCAyLjQyMS00LjU4OS45NjgtNC4yODUtLjM1NS4wNzQtLjUxNS4xMzgtLjUxNS4xMzhzLjEzMi0uMjA3LjM4NS0uMjk3YzIuODc1LTEuMDExIDUuMDg2IDIuOTgxLS45MjggNC41NjIgMC0uMDAxLjA3LS4wNjIuMDktLjExOE0xNC40MDEgMHMyLjQ5NCAyLjQ5NC0yLjM2NSA2LjMzYy0zLjg5NiAzLjA3Ny0uODg4IDQuODMyLS4wMDEgNi44MzYtMi4yNzQtMi4wNTMtMy45NDMtMy44NTgtMi44MjQtNS41MzkgMS42NDQtMi40NjkgNi4xOTctMy42NjUgNS4xOS03LjYyN005LjczNCAyMy45MjRjNC4zMjIuMjc3IDEwLjk1OS0uMTUzIDExLjExNi0yLjE5OCAwIDAtLjMwMi43NzUtMy41NzIgMS4zOTEtMy42ODguNjk0LTguMjM5LjYxMy0xMC45MzcuMTY4IDAtLjAwMS41NTMuNDU3IDMuMzkzLjYzOSIvPjwvc3ZnPg%3D%3D" align="absmiddle" /> <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" align="absmiddle" /> <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" align="absmiddle" /> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" align="absmiddle" />
+  <!-- 标题 -->
+  <a href="https://git.io/typing-svg">
+    <picture>
+      <source media="(prefers-color-scheme: dark)"
+        srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&speed=40&color=58A6FF&width=700&height=50&center=true&lines=Hi%2C+I%27m+konlue.+Walking+in+AI+Full-Stack.&repeat=false&loop=false" />
+      <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&speed=40&color=0969DA&width=700&height=50&center=true&lines=Hi%2C+I%27m+konlue.+Walking+in+AI+Full-Stack.&repeat=false&loop=false" alt="Typing SVG" />
+    </picture>
+  </a>
+  
+  <!-- 顶部横线 -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+      srcset="https://img.shields.io/badge/-%20-21262D?style=flat-square" />
+    <img src="https://img.shields.io/badge/-%20-E5E7EB?style=flat-square"
+      height="1" width="480" />
+  </picture>
 
-&nbsp;
-<a href="mailto:yuxiaoyu.dev@gmail.com"><img src="https://cdn.simpleicons.org/gmail/EA4335" width="16" align="absmiddle"/> <b>yuxiaoyu.dev@gmail.com</b></a>
+  <br/>
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="1" /><br/>
+
+  <!-- AI -->
+  <b>- AI -</b><br/>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" align="absmiddle" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" align="absmiddle" />
+  <img src="https://img.shields.io/badge/LangChain-1C3C6C?style=flat-square&logo=langchain&logoColor=white" align="absmiddle" />
+  <img src="https://img.shields.io/badge/LangGraph-FF6B6B?style=flat-square&logo=langgraph&logoColor=white" align="absmiddle" />
+
+
+  <!-- Java -->
+  <b>- Java -</b><br/>
+  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTguODUxIDE4LjU2cy0uOTE3LjUzNC42NTMuNzE0YzEuOTAyLjIxOCAyLjg3NC4xODcgNC45NjktLjIxMSAwIDAgLjU1Mi4zNDYgMS4zMjEuNjQ2LTQuNjk5IDIuMDEzLTEwLjYzMy0uMTE4LTYuOTQzLTEuMTQ5TTguMjc2IDE1LjkzM3MtMS4wMjguNzYxLjU0Mi45MjRjMi4wMzIuMjA5IDMuNjM2LjIyNyA2LjQxMy0uMzA4IDAgMCAuMzg0LjM4OS45ODcuNjAyLTUuNjc5IDEuNjYxLTEyLjAwNy4xMy03Ljk0Mi0xLjIxOE0xMy4xMTYgMTEuNDc1YzEuMTU4IDEuMzMzLS4zMDQgMi41MzMtLjMwNCAyLjUzM3MyLjkzOS0xLjUxOCAxLjU4OS0zLjQxOGMtMS4yNjEtMS43NzItMi4yMjgtMi42NTIgMy4wMDctNS42ODggMC0uMDAxLTguMjE2IDIuMDUxLTQuMjkyIDYuNTczTTE5LjMzIDIwLjUwNHMuNjc5LjU1OS0uNzQ3Ljk5MWMtMi43MTIuODIyLTExLjI4OCAxLjA2OS0xMy42NjkuMDMzLS44NTYtLjM3My43NS0uODkgMS4yNTQtLjk5OC41MjctLjExNC44MjgtLjA5My44MjgtLjA5My0uOTUzLS42NzEtNi4xNTYgMS4zMTctMi42NDMgMS44ODcgOS41OCAxLjU1MyAxNy40NjItLjcgMTQuOTc3LTEuODJNOS4yOTIgMTMuMjFzLTQuMzYyIDEuMDM2LTEuNTQ0IDEuNDEyYzEuMTg5LjE1OSAzLjU2MS4xMjMgNS43Ny0uMDYyIDEuODA2LS4xNTIgMy42MTgtLjQ3NyAzLjYxOC0uNDc3cy0uNjM3LjI3Mi0xLjA5OC41ODdjLTQuNDI5IDEuMTY1LTEyLjk4Ni42MjMtMTAuNTIyLS41NjggMi4wODItMS4wMDYgMy43NzYtLjg5MiAzLjc3Ni0uODkyTTE3LjExNiAxNy41ODRjNC41MDMtMi4zNCAyLjQyMS00LjU4OS45NjgtNC4yODUtLjM1NS4wNzQtLjUxNS4xMzgtLjUxNS4xMzhzLjEzMi0uMjA3LjM4NS0uMjk3YzIuODc1LTEuMDExIDUuMDg2IDIuOTgxLS45MjggNC41NjIgMC0uMDAxLjA3LS4wNjIuMDktLjExOE0xNC40MDEgMHMyLjQ5NCAyLjQ5NC0yLjM2NSA2LjMzYy0zLjg5NiAzLjA3Ny0uODg4IDQuODMyLS4wMDEgNi44MzYtMi4yNzQtMi4wNTMtMy45NDMtMy44NTgtMi44MjQtNS41MzkgMS42NDQtMi40NjkgNi4xOTctMy42NjUgNS4xOS03LjYyN005LjczNCAyMy45MjRjNC4zMjIuMjc3IDEwLjk1OS0uMTUzIDExLjExNi0yLjE5OCAwIDAtLjMwMi43NzUtMy41NzIgMS4zOTEtMy42ODguNjk0LTguMjM5LjYxMy0xMC45MzcuMTY4IDAtLjAwMS41NTMuNDU3IDMuMzkzLjYzOSIvPjwvc3ZnPg%3D%3D" align="absmiddle" />
+  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" align="absmiddle" />
+  <img src="https://img.shields.io/badge/Spring%20Cloud-6DB33F?style=flat-square&logo=spring&logoColor=white" align="absmiddle" />
+  <img src="https://img.shields.io/badge/Spring%20AI-6DB33F?style=flat-square&logo=spring&logoColor=white" align="absmiddle" />
+
+  <!-- Web -->
+  <b>- Web -</b><br/>
+  <img src="https://img.shields.io/badge/Vue-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white" align="absmiddle" />
+  <img src="https://img.shields.io/badge/Element%20Plus-409EFF?style=flat-square&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik04MzkuNyA3MzQuN2MwIDMzLjMtMTcuOSA0MS0xNy45IDQxUzUxOS43IDk0OS44IDQ5OS4yIDk2MGEzMyAzMyAwIDAgMS0zMC43IDBTMTUzLjYgNzc1LjcgMTQzLjQgNzY4YTU2IDU2IDAgMCAxLTEyLjgtMjAuNVYzNjguNmMwLTE3LjkgMjAuNS0yOC4yIDIwLjUtMjguMkw0NjYgMTU4LjZxMTkuMi03LjYgMzguNCAwczI3OSAxNjEuMyAzMDkuOCAxNzkuMmE0MyA0MyAwIDAgMSAyNS42IDQ2LjFjLS4xLTUtLjEgMzE3LjUtLjEgMzUwLjhNNzE0LjIgMzcxLjJjLTY0LTM1LjgtMjE3LjYtMTI1LjQtMjE3LjYtMTI1LjRjLTcuNy01LjEtMjAuNS01LjEtMzAuNyAwTDIxNy42IDM4OS4xcy0xNy45IDEwLjItMTcuOSAyM3YyOTdjMCA1LjEgNS4xIDEyLjggNy43IDE3LjljNy43IDUuMSAyNTYgMTQ4LjUgMjU2IDE0OC41YTIzIDIzIDAgMCAwIDI1LjYgMGMxNS40LTcuNyAyNTAuOS0xNDUuOSAyNTAuOS0xNDUuOXMxMi44LTUuMSAxMi44LTMwLjd2LTc0LjJsLTI3Ni41IDE2OXYtNjRjMC0xNy45IDcuNy0zMC43IDIwLjUtNDYuMUw3NDUgNTM1YTYzIDYzIDAgMCAwIDEwLjItMzAuN3YtNjYuNmwtMjc5IDE2OXYtNjkuMWMwLTE1LjQgNS4xLTMwLjcgMTcuOS0zOC40ek05MTkgMTM1LjdjMC01LjEtNS4xLTcuNy03LjctNy43aC01OC45VjY2LjZjMC01LjEtNS4xLTUuMS0xMC4yLTUuMWwtMzAuNyA1LjFjLTUuMSAwLTUuMSAyLjYtNS4xIDUuMVYxMjhoLTU2LjNjLTUuMSAwLTUuMSA1LjEtNy43IDUuMXYzOC40aDY5LjF2NjRjMCA1LjEgNS4xIDUuMSAxMC4yIDUuMWwzMC43LTUuMWM1LjEgMCA1LjEtMi42IDUuMS01LjF2LTU2LjNoNjR6Ii8%2BPC9zdmc%2B" align="absmiddle" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" align="absmiddle" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" align="absmiddle" />
+
+  <!-- Data -->
+  <b>- Data -</b><br/>
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" align="absmiddle" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" align="absmiddle" />
+  <img src="https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white" align="absmiddle" />
+  <img src="https://img.shields.io/badge/MinIO-C72C48?style=flat-square&logo=minio&logoColor=white" align="absmiddle" />
+
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="25" />
+  
+  <!-- 底部横线 -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)"
+      srcset="https://img.shields.io/badge/-%20-21262D?style=flat-square" />
+    <img src="https://img.shields.io/badge/-%20-E5E7EB?style=flat-square"
+      height="1" width="480" />
+  </picture>
+
+  <br/>
+  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="5" /><br/>
+
+  <!-- Links -->
+  <a href="mailto:yuxiaoyu.dev@gmail.com">
+    <img src="https://api.iconify.design/mdi:gmail.svg?color=%23EA4335&width=20&height=20" width="20" height="20" align="absmiddle" />
+    <b>yuxiaoyu.dev@gmail.com</b>
+  </a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://konlue.github.io" target="_blank" rel="noopener">
+    <img src="https://api.iconify.design/mdi:web.svg?color=%230969DA&width=20&height=20" width="20" height="20" align="absmiddle" />
+    <b>https://konlue.github.io</b>
+  </a>
+
+</div>
