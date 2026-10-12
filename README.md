@@ -63,14 +63,10 @@
   <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="5" /><br/>
 
   <!-- Links -->
-  <a href="mailto:yuxiaoyu.dev@gmail.com">
-    <img src="https://api.iconify.design/mdi:gmail.svg?color=%23EA4335&width=20&height=20" width="20" height="20" align="absmiddle" />
-    <b>yuxiaoyu.dev@gmail.com</b>
-  </a>
+  <img src="https://api.iconify.design/mdi:gmail.svg?color=%23EA4335&width=20&height=20" width="20" height="20" align="absmiddle" />
+  <a href="mailto:yuxiaoyu.dev@gmail.com"><b>yuxiaoyu.dev@gmail.com</b></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://konlue.github.io" target="_blank" rel="noopener">
-    <img src="https://api.iconify.design/mdi:web.svg?color=%230969DA&width=20&height=20" width="20" height="20" align="absmiddle" />
-    <b>https://konlue.github.io</b>
-  </a>
+  <img src="https://api.iconify.design/mdi:post-outline.svg?color=%232E7D32&width=20&height=20" width="20" height="20" align="absmiddle" />
+  <a href="https://konlue.github.io" target="_blank" rel="noopener"><b>https://konlue.github.io</b></a>
 
 </div>
