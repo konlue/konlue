@@ -1,6 +1,6 @@
-<div align="center">
 
-  <!-- 标题 -->
+<div align="center">
+  <!-- title -->
   <a href="https://git.io/typing-svg">
     <picture>
       <source media="(prefers-color-scheme: dark)"
@@ -8,65 +8,88 @@
       <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&speed=40&color=0969DA&width=700&height=50&center=true&lines=Hi%2C+I%27m+konlue.+Walking+in+AI+Full-Stack.&repeat=false&loop=false" alt="Typing SVG" />
     </picture>
   </a>
-  
-  <!-- 顶部横线 -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)"
-      srcset="https://img.shields.io/badge/-%20-21262D?style=flat-square" />
-    <img src="https://img.shields.io/badge/-%20-E5E7EB?style=flat-square"
-      height="1" width="460" />
-  </picture>
-
-  <br/>
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="1" /><br/>
-
-  <!-- AI -->
-  <b>- AI -</b><br/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" align="absmiddle" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" align="absmiddle" />
-  <img src="https://img.shields.io/badge/LangChain-1C3C6C?style=flat-square&logo=langchain&logoColor=white" align="absmiddle" />
-  <img src="https://img.shields.io/badge/LangGraph-FF6B6B?style=flat-square&logo=langgraph&logoColor=white" align="absmiddle" />
-
-
-  <!-- Java -->
-  <b>- Java -</b><br/>
-  <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTguODUxIDE4LjU2cy0uOTE3LjUzNC42NTMuNzE0YzEuOTAyLjIxOCAyLjg3NC4xODcgNC45NjktLjIxMSAwIDAgLjU1Mi4zNDYgMS4zMjEuNjQ2LTQuNjk5IDIuMDEzLTEwLjYzMy0uMTE4LTYuOTQzLTEuMTQ5TTguMjc2IDE1LjkzM3MtMS4wMjguNzYxLjU0Mi45MjRjMi4wMzIuMjA5IDMuNjM2LjIyNyA2LjQxMy0uMzA4IDAgMCAuMzg0LjM4OS45ODcuNjAyLTUuNjc5IDEuNjYxLTEyLjAwNy4xMy03Ljk0Mi0xLjIxOE0xMy4xMTYgMTEuNDc1YzEuMTU4IDEuMzMzLS4zMDQgMi41MzMtLjMwNCAyLjUzM3MyLjkzOS0xLjUxOCAxLjU4OS0zLjQxOGMtMS4yNjEtMS43NzItMi4yMjgtMi42NTIgMy4wMDctNS42ODggMC0uMDAxLTguMjE2IDIuMDUxLTQuMjkyIDYuNTczTTE5LjMzIDIwLjUwNHMuNjc5LjU1OS0uNzQ3Ljk5MWMtMi43MTIuODIyLTExLjI4OCAxLjA2OS0xMy42NjkuMDMzLS44NTYtLjM3My43NS0uODkgMS4yNTQtLjk5OC41MjctLjExNC44MjgtLjA5My44MjgtLjA5My0uOTUzLS42NzEtNi4xNTYgMS4zMTctMi42NDMgMS44ODcgOS41OCAxLjU1MyAxNy40NjItLjcgMTQuOTc3LTEuODJNOS4yOTIgMTMuMjFzLTQuMzYyIDEuMDM2LTEuNTQ0IDEuNDEyYzEuMTg5LjE1OSAzLjU2MS4xMjMgNS43Ny0uMDYyIDEuODA2LS4xNTIgMy42MTgtLjQ3NyAzLjYxOC0uNDc3cy0uNjM3LjI3Mi0xLjA5OC41ODdjLTQuNDI5IDEuMTY1LTEyLjk4Ni42MjMtMTAuNTIyLS41NjggMi4wODItMS4wMDYgMy43NzYtLjg5MiAzLjc3Ni0uODkyTTE3LjExNiAxNy41ODRjNC41MDMtMi4zNCAyLjQyMS00LjU4OS45NjgtNC4yODUtLjM1NS4wNzQtLjUxNS4xMzgtLjUxNS4xMzhzLjEzMi0uMjA3LjM4NS0uMjk3YzIuODc1LTEuMDExIDUuMDg2IDIuOTgxLS45MjggNC41NjIgMC0uMDAxLjA3LS4wNjIuMDktLjExOE0xNC40MDEgMHMyLjQ5NCAyLjQ5NC0yLjM2NSA2LjMzYy0zLjg5NiAzLjA3Ny0uODg4IDQuODMyLS4wMDEgNi44MzYtMi4yNzQtMi4wNTMtMy45NDMtMy44NTgtMi44MjQtNS41MzkgMS42NDQtMi40NjkgNi4xOTctMy42NjUgNS4xOS03LjYyN005LjczNCAyMy45MjRjNC4zMjIuMjc3IDEwLjk1OS0uMTUzIDExLjExNi0yLjE5OCAwIDAtLjMwMi43NzUtMy41NzIgMS4zOTEtMy42ODguNjk0LTguMjM5LjYxMy0xMC45MzcuMTY4IDAtLjAwMS41NTMuNDU3IDMuMzkzLjYzOSIvPjwvc3ZnPg%3D%3D" align="absmiddle" />
-  <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F?style=flat-square&logo=springboot&logoColor=white" align="absmiddle" />
-  <img src="https://img.shields.io/badge/Spring%20Cloud-6DB33F?style=flat-square&logo=spring&logoColor=white" align="absmiddle" />
-  <img src="https://img.shields.io/badge/Spring%20AI-6DB33F?style=flat-square&logo=spring&logoColor=white" align="absmiddle" />
-
-  <!-- Web -->
-  <b>- Web -</b><br/>
-  <img src="https://img.shields.io/badge/Vue-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white" align="absmiddle" />
-  <img src="https://img.shields.io/badge/Element%20Plus-409EFF?style=flat-square&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik04MzkuNyA3MzQuN2MwIDMzLjMtMTcuOSA0MS0xNy45IDQxUzUxOS43IDk0OS44IDQ5OS4yIDk2MGEzMyAzMyAwIDAgMS0zMC43IDBTMTUzLjYgNzc1LjcgMTQzLjQgNzY4YTU2IDU2IDAgMCAxLTEyLjgtMjAuNVYzNjguNmMwLTE3LjkgMjAuNS0yOC4yIDIwLjUtMjguMkw0NjYgMTU4LjZxMTkuMi03LjYgMzguNCAwczI3OSAxNjEuMyAzMDkuOCAxNzkuMmE0MyA0MyAwIDAgMSAyNS42IDQ2LjFjLS4xLTUtLjEgMzE3LjUtLjEgMzUwLjhNNzE0LjIgMzcxLjJjLTY0LTM1LjgtMjE3LjYtMTI1LjQtMjE3LjYtMTI1LjRjLTcuNy01LjEtMjAuNS01LjEtMzAuNyAwTDIxNy42IDM4OS4xcy0xNy45IDEwLjItMTcuOSAyM3YyOTdjMCA1LjEgNS4xIDEyLjggNy43IDE3LjljNy43IDUuMSAyNTYgMTQ4LjUgMjU2IDE0OC41YTIzIDIzIDAgMCAwIDI1LjYgMGMxNS40LTcuNyAyNTAuOS0xNDUuOSAyNTAuOS0xNDUuOXMxMi44LTUuMSAxMi44LTMwLjd2LTc0LjJsLTI3Ni41IDE2OXYtNjRjMC0xNy45IDcuNy0zMC43IDIwLjUtNDYuMUw3NDUgNTM1YTYzIDYzIDAgMCAwIDEwLjItMzAuN3YtNjYuNmwtMjc5IDE2OXYtNjkuMWMwLTE1LjQgNS4xLTMwLjcgMTcuOS0zOC40ek05MTkgMTM1LjdjMC01LjEtNS4xLTcuNy03LjctNy43aC01OC45VjY2LjZjMC01LjEtNS4xLTUuMS0xMC4yLTUuMWwtMzAuNyA1LjFjLTUuMSAwLTUuMSAyLjYtNS4xIDUuMVYxMjhoLTU2LjNjLTUuMSAwLTUuMSA1LjEtNy43IDUuMXYzOC40aDY5LjF2NjRjMCA1LjEgNS4xIDUuMSAxMC4yIDUuMWwzMC43LTUuMWM1LjEgMCA1LjEtMi42IDUuMS01LjF2LTU2LjNoNjR6Ii8%2BPC9zdmc%2B" align="absmiddle" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" align="absmiddle" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" align="absmiddle" />
-
-  <!-- Data -->
-  <b>- Data -</b><br/>
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" align="absmiddle" />
-  <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" align="absmiddle" />
-  <img src="https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white" align="absmiddle" />
-  <img src="https://img.shields.io/badge/MinIO-C72C48?style=flat-square&logo=minio&logoColor=white" align="absmiddle" />
-
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="25" />
-  
-  <!-- 底部横线 -->
-  <picture>
-    <source media="(prefers-color-scheme: dark)"
-      srcset="https://img.shields.io/badge/-%20-21262D?style=flat-square" />
-    <img src="https://img.shields.io/badge/-%20-E5E7EB?style=flat-square"
-      height="1" width="460" />
-  </picture>
-
-  <br/>
-  <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" width="1" height="5" /><br/>
-
+</div>
+</br>
+<div align="center">
   <!-- Links -->
   <img src="https://api.iconify.design/mdi:gmail.svg?color=%23EA4335&width=20&height=20" width="20" height="20" align="absmiddle" />
   <a href="mailto:yuxiaoyu.dev@gmail.com"><b>yuxiaoyu.dev@gmail.com</b></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <img src="https://api.iconify.design/mdi:post-outline.svg?color=%232E7D32&width=20&height=20" width="20" height="20" align="absmiddle" />
   <a href="https://konlue.github.io" target="_blank" rel="noopener"><b>https://konlue.github.io</b></a>
-
 </div>
+</br>
+
+<h2 align="left">Contributing to</h2>
+
+### [apache/shenyu](https://github.com/apache/shenyu)
+
+> **Apache ShenYu** (⭐ 8.9k) — Java-native API gateway for service proxy, protocol conversion and API governance.
+
+**What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus registry cleanup, dependency slimming and release notes. Currently working on MQTT clientId takeover and QoS2 dedup, plugin fault-tolerance eviction and K8s scaler wiring.
+
+<details>
+<summary>  34 PRs · ✅ 25 merged · 🟡 8 open · ⛔ 1 closed &nbsp;(click to expand)</summary>
+<br>
+
+| PR | Status | Title |
+| --- | --- | --- |
+| [#7939](https://github.com/apache/shenyu/pull/7939) | 🟡 Open | fix(mqtt): take over duplicate clientIds and fence stale-connection cleanup (#7918) |
+| [#7938](https://github.com/apache/shenyu/pull/7938) | 🟡 Open | fix(mqtt): deduplicate retransmitted qos2 publishes with inbound in-flight state (#7919) |
+| [#7925](https://github.com/apache/shenyu/pull/7925) | 🟡 Open | fix(plugin): evict cached fault-tolerance handles when explicitly cleared (#7914) |
+| [#7917](https://github.com/apache/shenyu/pull/7917) | 🟡 Open | fix(admin): back k8s client/scaler beans off their own types and guard the missing client (#7912) |
+| [#7887](https://github.com/apache/shenyu/pull/7887) | ✅ Merged | refactor(admin): drop commons-io by replacing two IOUtils.copy call sites (#7607) |
+| [#7858](https://github.com/apache/shenyu/pull/7858) | ✅ Merged | fix(base): resolve partial identities when removing metadata (#7790) |
+| [#7850](https://github.com/apache/shenyu/pull/7850) | ✅ Merged | perf(ai): parse the rule words only on a dictionary cache miss (#7829) |
+| [#7846](https://github.com/apache/shenyu/pull/7846) | ✅ Merged | test(admin): use json payloads in the heartbeat metadata tests (#7692) |
+| [#7844](https://github.com/apache/shenyu/pull/7844) | ⛔ Closed | fix(ai): build the sensitive-word dictionary off the redis io threads (#7830) |
+| [#7798](https://github.com/apache/shenyu/pull/7798) | ✅ Merged | fix(rewrite): look up rewrite metadata with an empty prefix when context-path is absent (#7796) |
+| [#7797](https://github.com/apache/shenyu/pull/7797) | ✅ Merged | fix(admin): forward instance heartbeats to the master admin (#7778) |
+| [#7786](https://github.com/apache/shenyu/pull/7786) | ✅ Merged | fix(sdk): give each invocation independently owned header values (#7771) |
+| [#7782](https://github.com/apache/shenyu/pull/7782) | ✅ Merged | fix(admin): stop the master selector scheduler on cluster shutdown (#7774) |
+| [#7780](https://github.com/apache/shenyu/pull/7780) | 🟡 Open | fix(admin): keep accepted heartbeats when restoring instances from the database (#7763) |
+| [#7776](https://github.com/apache/shenyu/pull/7776) | 🟡 Open | fix(admin): ignore heartbeats with an incomplete instance identity (#7764) |
+| [#7766](https://github.com/apache/shenyu/pull/7766) | 🟡 Open | fix(logging): clear the selector sampler override when its handle is emptied (#7750) |
+| [#7758](https://github.com/apache/shenyu/pull/7758) | ✅ Merged | fix(admin): order Oracle operation logs before applying the row limit (#7739) |
+| [#7756](https://github.com/apache/shenyu/pull/7756) | ✅ Merged | fix(admin): use two-argument CONCAT for Oracle operation-log searches (#7738) |
+| [#7754](https://github.com/apache/shenyu/pull/7754) | ✅ Merged | fix(admin): use ROWNUM for the Oracle instance identity lookup (#7724) |
+| [#7746](https://github.com/apache/shenyu/pull/7746) | 🟡 Open | fix(dubbo): resolve single name-mapped parameters instead of using the mapping JSON as a type name (#7736) |
+| [#7742](https://github.com/apache/shenyu/pull/7742) | ✅ Merged | fix(admin): expose the instance record id in the instance API (#7731) |
+| [#7740](https://github.com/apache/shenyu/pull/7740) | ✅ Merged | fix(sdk): accept all 2xx responses and validate failures on void methods (#7711) |
+| [#7729](https://github.com/apache/shenyu/pull/7729) | ✅ Merged | fix(sdk): quote path-variable replacement values in the Spring SDK (#7712) |
+| [#7726](https://github.com/apache/shenyu/pull/7726) | ✅ Merged | fix(bootstrap): own and dispose the gateway's custom Netty event loops (#7715) |
+| [#7722](https://github.com/apache/shenyu/pull/7722) | ✅ Merged | fix(register): report the bootstrap instance type from the independent heartbeat (#7696) |
+| [#7721](https://github.com/apache/shenyu/pull/7721) | ✅ Merged | fix(admin): refresh instance metadata on repeated heartbeats (#7692) |
+| [#7710](https://github.com/apache/shenyu/pull/7710) | ✅ Merged | fix(admin): initialise V1Scale spec before setting replicas (#7698) |
+| [#7699](https://github.com/apache/shenyu/pull/7699) | ✅ Merged | fix(logging): shutdown hook cleanup reaches close0 when hook removal throws (#7686) |
+| [#7691](https://github.com/apache/shenyu/pull/7691) | ✅ Merged | fix(admin): exclusion search drops plugins matching any searchable field (#7690) |
+| [#7677](https://github.com/apache/shenyu/pull/7677) | ✅ Merged | refactor(admin): rename misspelled loged column/field to logged in selector and rule (#7589) |
+| [#7663](https://github.com/apache/shenyu/pull/7663) | ✅ Merged | fix(log): reduce routine matching and configuration-sync log volume (#7643) |
+| [#7642](https://github.com/apache/shenyu/pull/7642) | ✅ Merged | docs: record registry core/implementation decoupling in release notes (#7585) |
+| [#7618](https://github.com/apache/shenyu/pull/7618) | ✅ Merged | build: remove misspelled log4j-1.2-api property and obsolete zookeeper log4j exclusion (#7609) |
+| [#7611](https://github.com/apache/shenyu/pull/7611) | ✅ Merged | refactor(registry): remove the orphaned shenyu-registry-consul module (#7583) |
+
+</details>
+
+### [agentic-ai-java/argi](https://github.com/agentic-ai-java/argi)
+
+> **ARGI** — Agent Runtime and Graph Intelligence (⭐ 127): a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
+
+**What I did**: The opt-in ToolCall argument-validation gate (local JSON Schema `$ref` expansion, resource limits), a unified tool-failure status contract, the AgentResult delivery contract with structured-output finalizer, and a fix for user-registered KeyStrategy loss during state cloning. Currently working on streaming delivery boundaries.
+
+<details>
+<summary>  8 PRs · ✅ 6 merged · 🟡 1 open · ⛔ 1 closed &nbsp;(click to expand)</summary>
+<br>
+
+| PR | Status | Title |
+| --- | --- | --- |
+| [#179](https://github.com/agentic-ai-java/argi/pull/179) | 🟡 Open | feat(agent): add streaming delivery boundary with bounded format repair (T39) |
+| [#173](https://github.com/agentic-ai-java/argi/pull/173) | ✅ Merged | feat(agent): add AgentResult delivery contract with opt-in structured output finalizer (T39) |
+| [#167](https://github.com/agentic-ai-java/argi/pull/167) | ✅ Merged | feat(agent): add registered business outcome mapping and outcome consistency fixes (T38) |
+| [#159](https://github.com/agentic-ai-java/argi/pull/159) | ✅ Merged | feat(agent): unify tool failure status contract and remove null-status error paths (T38) |
+| [#151](https://github.com/agentic-ai-java/argi/pull/151) | ✅ Merged | feat(agent): add resource limits and local $ref expansion to tool argument validation (T31) |
+| [#149](https://github.com/agentic-ai-java/argi/pull/149) | ✅ Merged | feat(agent): add opt-in ToolCall argument validation gate before dispatch (T31) |
+| [#116](https://github.com/agentic-ai-java/argi/pull/116) | ⛔ Closed | chore(graph): add missing Apache license header to CloneStateKeyStrategyPollutionTest |
+| [#115](https://github.com/agentic-ai-java/argi/pull/115) | ✅ Merged | fix(graph): preserve user-registered input KeyStrategy across state cloning and snapshots |
+
+</details>
