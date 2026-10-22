@@ -1,10 +1,10 @@
 {
-  "apache/shenyu": {
-    "stars": 8899,
-    "fetched": "2026-10-21"
-  },
   "agentic-ai-java/argi": {
-    "stars": 127,
-    "fetched": "2026-10-21"
+    "stars": 128,
+    "fetched": "2026-10-22"
+  },
+  "apache/shenyu": {
+    "stars": 8903,
+    "fetched": "2026-10-22"
   }
 }

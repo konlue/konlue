@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="62" viewBox="0 0 1000 62" role="img">
+<title>#7611 refactor(registry): remove the orphaned shenyu-registry-consul module (#7583)</title>
+<!-- Pixelarticon icons: Gerrit Halfmann, MIT. -->
+<rect width="1000" height="62" fill="#ffffff"/>
+<style>text{font-family:Inter,"Segoe UI",Arial,sans-serif}.mono{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace}</style>
+<path d="M66 0V31" stroke="#52625d" stroke-opacity="0.4" stroke-width="2"/>
+<rect x="48" y="13" width="36" height="36" rx="3" fill="#ffffff" stroke="#52625d" stroke-opacity="0.4"/>
+<g transform="translate(54 19)" fill="#26322f">
+<path d="M9 22H7v-2h2v2Zm12-6h2v6h-6v-6h2v-6h2v6Zm-2 2v2h2v-2h-2ZM7 20H5v-8h2v8Zm4 0H9v-8h2v8Zm-6-8H3v-2h2v2Zm8 0h-2v-2h2v2ZM3 10H1V4h2v6Zm12 0h-2V4h2v6Zm4 0h-2V4h2v6Zm4 0h-2V4h2v6ZM7 6h2V2h4v2h-2v4H5V4H3V2h4v4Zm14-2h-2V2h2v2Z"/>
+</g>
+<text x="104" y="27" fill="#26322f" font-size="15" font-weight="700">#7611</text>
+<text x="104" y="49" fill="#52625d" font-size="13">refactor(registry): remove the orphaned shenyu-registry-consul module (#7583)</text>
+<text x="964" y="36" text-anchor="end" class="mono" fill="#16866e" font-size="12" font-weight="700">[ TOOL ] 2026-10-14</text>
+</svg>

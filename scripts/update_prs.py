@@ -2,14 +2,21 @@
 """Refresh the profile's open-source PR section using the GitHub API.
 
 Adapted from wuyak/wuyak's update_prs.py: keeps the race-safe search /
-pagination, per-project star fetching, and the SVG timeline-card rendering
+pagination, the per-project star fetching, and the SVG row rendering
 (Pixelarticon icons by Gerrit Halfmann, MIT), with these changes:
 
-- one card per project instead of one flat card, so each project keeps its
-  own intro prose and its list stays collapsible (<details>)
-- the card shows every PR (merged / open / closed), with the status carried
-  by the right-hand label: merged -> green date, open -> amber OPEN,
-  closed -> muted CLOSED
+- one small SVG per PR row instead of one big card per project: each row is
+  wrapped in an <a> linking to the PR, so every row is clickable and jumps
+  to its PR page (an <img>-embedded SVG cannot contain live links)
+- rows drop the per-row repo name and star count: the card is per-project,
+  so both were pure repetition (the project title line shows them once)
+- the <summary> line acts as the card header, so there is no separate header
+  band; rows stack seamlessly into the card (each row <img> uses align="top"
+  to kill the inline descender gap, and the timeline spine runs from the
+  first icon's centre to the last icon's centre)
+- the project title line uses pixel-art icons + text links (folder / star,
+  Pixelarticon) instead of shields badges, and the summary line uses pixel
+  icons (check / circle / chevron) instead of emoji, for a unified look
 - manual prose lives in scripts/repo_notes.json so code updates never
   clobber it
 - fixed UTC+8 timezone (works without the system tz database)
@@ -17,26 +24,22 @@ pagination, per-project star fetching, and the SVG timeline-card rendering
 The script only rewrites the region between the OPEN_SOURCE_PRS markers in
 README.md and the SVGs under assets/. Generated region layout:
 
-    > As of <date>: <N> PRs across <M> projects, <K> merged.
-
-    <h3 align="left">
-      <a href="..."><img title badge /></a>
-      <a href=".../stargazers"><img stars badge /></a>
-    </h3>
+    <h4 align="left">[folder icon] <a><b>owner/repo</b></a> &nbsp;&nbsp;&nbsp;&nbsp; [star icon] <a><b>Nk stars</b></a></h4>
 
     > <about>                  # from repo_notes.json (optional)
 
     **What I did**: <did>      # from repo_notes.json (optional)
 
     <details>
-    <summary>N PRs · ✅ X merged · 🟡 Y open · ⛔ Z closed (click to expand)</summary>
+    <summary>N PRs &nbsp;&nbsp;[check] X merged &nbsp;&nbsp;[circle] Y open &nbsp;&nbsp;(&nbsp;click to expand[chevron])</summary>
 
-    <a href="...">
+    <a href="https://github.com/<repo>/pull/<n>">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="./assets/<slug>-dark.svg">
-      <img src="./assets/<slug>-light.svg" width="100%" alt="...">
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/<slug>-<n>-dark.svg">
+      <img src="./assets/<slug>-<n>-light.svg" width="100%" align="top" alt="#<n> <title> [TYPE] ...">
     </picture>
     </a>
+    ... one block per PR, no blank lines between them ...
 
     [View all merged PRs in <repo> →](...)
 
@@ -71,12 +74,25 @@ TZ = timezone(timedelta(hours=8), "UTC+8")
 # Star counts are cached for a day: they change slowly, and caching keeps
 # local runs (and many-project setups) well inside the API rate limit.
 STARS_TTL = timedelta(hours=24)
-# Badge colours assigned to projects in order of PR count (descending).
-BADGE_COLORS = ["4A154B", "0A66C2", "2E7D32", "C72C48", "1C3C6C", "6DB33F", "FF6B6B", "409EFF"]
 # Projects to showcase (comma-separated, overridable via PROFILE_REPOS).
 # Only PRs to these repositories appear in the section; add a repo here (and
 # to scripts/repo_notes.json for its intro text) to feature more projects.
 DEFAULT_REPOS = "apache/shenyu,agentic-ai-java/argi"
+# Row geometry: 1000x62 px per row, stacked seamlessly (background matches
+# the GitHub page colour, so no inline-image gaps remain).
+ROW_W, ROW_H = 1000, 62
+TITLE_MAX = 90  # titles longer than this are truncated with an ellipsis
+# Pixel-art icons (Pixelarticon) used in the README chrome around the cards.
+# folder/star sit in the project title line, sized like the contact icons
+# (24px, the pixel grid's native size); check/circle/chevron are inline with
+# 16px summary text, so they stay smaller.
+UI = {
+    "folder": '<img src="./assets/ui/folder.svg" width="24" height="24" align="absmiddle" alt="repository">',
+    "star": '<img src="./assets/ui/star.svg" width="24" height="24" align="absmiddle" alt="stars">',
+    "check": '<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged">',
+    "circle": '<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open">',
+    "chevron": '<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">',
+}
 
 
 def search_query(username):
@@ -134,7 +150,7 @@ def fetch_prs(username, token):
 
 
 def fetch_projects(repos, token):
-    """Star count per project, drawn on each card row (cached for STARS_TTL)."""
+    """Star count per project, shown once next to the project title."""
     headers = {"Accept": "application/vnd.github+json", "User-Agent": USER_AGENT}
     if token:
         headers["Authorization"] = f"Bearer {token}"
@@ -171,11 +187,6 @@ def fetch_projects(repos, token):
     return projects
 
 
-def badge_label(repo):
-    """Shields.io badge label: literal dashes need '--', slashes are encoded."""
-    return quote(repo.replace("-", "--"), safe="")
-
-
 def kind(title):
     """Classify a PR by its conventional-commit prefix (wuyak's mapping)."""
     for prefixes, name in ((('fix', 'bug'), 'fix'), (('feat', 'add', 'implement'), 'feat'),
@@ -199,91 +210,110 @@ def fmt_date(iso):
     return datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(TZ).strftime("%Y-%m-%d")
 
 
-def render_card(prs, slug, projects, dark=False):
-    """One SVG timeline card for a single project (light or dark theme)."""
+def row_status(pr):
+    """(right-hand label, colour) for a PR row."""
+    category = kind(pr["title"])
+    label = category.upper() if category != "other" else "PR"
+    if pr["state"] == "merged":
+        return f"[ {label} ] {fmt_date(pr['merged_at'])}", "green"
+    if pr["state"] == "open":
+        return f"[ {label} ] OPEN", "amber"
+    return f"[ {label} ] CLOSED", "muted"
+
+
+def render_row(pr, dark=False, position="middle"):
+    """One SVG row (1000x62) for a single PR; the README links the whole row.
+
+    position is "first", "middle" or "last": the timeline spine starts at the
+    first icon's centre and ends at the last icon's centre, so the first row
+    has no line above its icon and the last row none below it.
+    """
     bg, text, muted, line, green = ('#0d1117', '#e6edf3', '#9dada8', '#334740', '#58c9aa') if dark else (
         '#ffffff', '#26322f', '#52625d', '#dfe7e4', '#16866e')
     amber = '#d29922' if dark else '#9a6700'
-    merged = sum(1 for pr in prs if pr["state"] == "merged")
-    opened = sum(1 for pr in prs if pr["state"] == "open")
-    header = f"{len(prs)} PRS · {merged} MERGED"
-    if opened:
-        header += f" · {opened} OPEN"
-    height = 100 + max(1, len(prs)) * 62
+    right, tone = row_status(pr)
+    right_color = {"green": green, "amber": amber, "muted": muted}[tone]
+    category = kind(pr["title"])
+    title = pr["title"] if len(pr["title"]) <= TITLE_MAX else pr["title"][:TITLE_MAX - 1].rstrip() + "…"
+
+    if position == "first":
+        spine = f'<path d="M66 31V{ROW_H}" stroke="{muted}" stroke-opacity="0.4" stroke-width="2"/>'
+    elif position == "last":
+        spine = '<path d="M66 0V31" stroke="{}" stroke-opacity="0.4" stroke-width="2"/>'.format(muted)
+    elif position == "only":
+        spine = ""
+    else:
+        spine = f'<path d="M66 0V{ROW_H}" stroke="{muted}" stroke-opacity="0.4" stroke-width="2"/>'
+
     parts = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="{height}" viewBox="0 0 1000 {height}" role="img">',
-        f'<title>{slug.replace("--", "/")} open-source contributions</title>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{ROW_W}" height="{ROW_H}" viewBox="0 0 {ROW_W} {ROW_H}" role="img">',
+        f'<title>#{pr["number"]} {pr["title"]}</title>',
         '<!-- Pixelarticon icons: Gerrit Halfmann, MIT. -->',
-        f'<rect width="1000" height="{height}" fill="{bg}"/>',
+        f'<rect width="{ROW_W}" height="{ROW_H}" fill="{bg}"/>',
         '<style>text{font-family:Inter,"Segoe UI",Arial,sans-serif}.mono{font-family:SFMono-Regular,Consolas,"Liberation Mono",Menlo,monospace}</style>',
-        f'<text x="36" y="36" fill="{text}" font-size="14" font-weight="700">{header}</text>',
-        f'<text x="964" y="36" text-anchor="end" class="mono" fill="{green}" font-size="12" font-weight="700">AUTO-SYNC</text>',
-        f'<path d="M36 56H964" stroke="{line}"/>',
+        spine,
+        f'<rect x="48" y="13" width="36" height="36" rx="3" fill="{bg}" stroke="{muted}" stroke-opacity="0.4"/>',
+        f'<g transform="translate(54 19)" fill="{text}">',
     ]
-    if len(prs) > 1:
-        parts.append(f'<path d="M66 101V{101 + (len(prs) - 1) * 62}" stroke="{muted}" stroke-opacity="0.4" stroke-width="2"/>')
-    for index, pr in enumerate(prs):
-        y = 101 + index * 62
-        category = kind(pr["title"])
-        label = category.upper() if category != "other" else "PR"
-        title = pr["title"] if len(pr["title"]) <= 76 else pr["title"][:75].rstrip() + "…"
-        if pr["state"] == "merged":
-            right, right_color = f"[ {label} ] {fmt_date(pr['merged_at'])}", green
-        elif pr["state"] == "open":
-            right, right_color = f"[ {label} ] OPEN", amber
-        else:
-            right, right_color = f"[ {label} ] CLOSED", muted
-        parts += [
-            f'<rect x="48" y="{y - 18}" width="36" height="36" rx="3" fill="{bg}" stroke="{muted}" stroke-opacity="0.4"/>',
-            f'<g transform="translate(54 {y - 12})" fill="{text}">',
-        ]
-        parts.extend(f'<path d="{path}"/>' for path in ICONS["SVG_ICONS"][category])
-        parts += [
-            '</g>',
-            f'<text x="104" y="{y - 4}" fill="{text}" font-size="15" font-weight="700">{html.escape(pr["repo"])} <tspan fill="{muted}" font-weight="400">/ #{pr["number"]}</tspan></text>',
-            f'<text x="104" y="{y + 18}" fill="{muted}" font-size="13">{html.escape(title)}</text>',
-            f'<text x="762" y="{y + 6}" text-anchor="end" class="mono" fill="{text}" font-size="16" font-weight="700">{stars_label(projects[pr["repo"]]["stars"])}</text>',
-            f'<path d="{ICONS["STAR_ICON"]}" transform="translate(770 {y - 12})" fill="{text}"/>',
-            f'<text x="964" y="{y + 5}" text-anchor="end" class="mono" fill="{right_color}" font-size="12" font-weight="700">{right}</text>',
-        ]
-    parts.append('</svg>')
+    parts.extend(f'<path d="{path}"/>' for path in ICONS["SVG_ICONS"][category])
+    parts += [
+        '</g>',
+        f'<text x="104" y="27" fill="{text}" font-size="15" font-weight="700">#{pr["number"]}</text>',
+        f'<text x="104" y="49" fill="{muted}" font-size="13">{html.escape(title)}</text>',
+        f'<text x="964" y="36" text-anchor="end" class="mono" fill="{right_color}" font-size="12" font-weight="700">{right}</text>',
+        '</svg>',
+    ]
     return "\n".join(parts) + "\n"
 
 
-def render_repo_block(repo, prs, stars, notes, color, slug, username):
-    label = badge_label(repo)
+def row_alt(pr):
+    right, _ = row_status(pr)
+    return f"#{pr['number']} {pr['title']} {right}"
+
+
+def render_repo_block(repo, prs, stars, notes, slug, username):
     merged = sum(1 for pr in prs if pr["state"] == "merged")
     opened = sum(1 for pr in prs if pr["state"] == "open")
-    closed = len(prs) - merged - opened
-    bits = [f"{len(prs)} PRs", f"✅ {merged} merged"]
+    bits = [f"{len(prs)} PRs", f"{UI['check']} {merged} merged"]
     if opened:
-        bits.append(f"🟡 {opened} open")
-    if closed:
-        bits.append(f"⛔ {closed} closed")
+        bits.append(f"{UI['circle']} {opened} open")
     repo_prs_url = f"https://github.com/{repo}/pulls?q=is%3Apr+author%3A{username}+is%3Amerged"
 
-    lines = [
-        '<h3 align="left">',
-        f'  <a href="https://github.com/{repo}"><img src="https://img.shields.io/badge/{label}-{color}?style=flat-square" alt="{repo}" /></a>',
-        f'  <a href="https://github.com/{repo}/stargazers"><img src="https://img.shields.io/github/stars/{repo}?style=flat-square" alt="{repo} stars" /></a>',
-        '</h3>',
-        '',
-    ]
+    # project title line: pixel icons + plain text links (no shields badges);
+    # the star count is plain bold text (the repo link sits right next to it)
+    title_line = (
+        f'<h4 align="left">{UI["folder"]} '
+        f'<a href="https://github.com/{repo}"><b>{repo}</b></a>'
+        f' &nbsp;&nbsp;&nbsp;&nbsp; {UI["star"]} '
+        f'<b>{stars_label(stars)}</b></h4>'
+    )
+
+    lines = [title_line, ""]
     note = notes.get(repo, {})
     if note.get("about"):
         lines += [f"> {note['about']}", '']
     if note.get("did"):
         lines += [f"**What I did**: {note['did']}", '']
+
+    # One linked row per PR. No blank lines between blocks: they must stay in
+    # a single HTML block so the rows stack without paragraph gaps. The
+    # align="top" on each image kills the inline descender gap (~4px) that
+    # would otherwise break both the stacked background and the timeline spine.
     lines += [
         "<details>",
-        f"<summary>{' · '.join(bits)} &nbsp;(click to expand)</summary>",
+        f"<summary>{'&nbsp;&nbsp;'.join(bits)} &nbsp;&nbsp;(&nbsp;click to expand{UI['chevron']})</summary>",
         "",
-        f'<a href="{repo_prs_url}">',
-        "<picture>",
-        f'  <source media="(prefers-color-scheme: dark)" srcset="./assets/{slug}-dark.svg">',
-        f'  <img src="./assets/{slug}-light.svg" width="100%" alt="{repo}: {len(prs)} PRs, {merged} merged">',
-        "</picture>",
-        "</a>",
+    ]
+    for pr in prs:
+        lines += [
+            f'<a href="{pr["url"]}">',
+            "<picture>",
+            f'  <source media="(prefers-color-scheme: dark)" srcset="./assets/{slug}-{pr["number"]}-dark.svg">',
+            f'  <img src="./assets/{slug}-{pr["number"]}-light.svg" width="100%" align="top" alt="{html.escape(row_alt(pr), quote=True)}">',
+            "</picture>",
+            "</a>",
+        ]
+    lines += [
         "",
         f"[View all merged PRs in {repo} →]({repo_prs_url})",
         "",
@@ -293,7 +323,6 @@ def render_repo_block(repo, prs, stars, notes, color, slug, username):
 
 
 def render(prs, projects, notes, username):
-    today = datetime.now(TZ).strftime("%Y-%m-%d")
     by_repo = {}
     for pr in prs:
         by_repo.setdefault(pr["repo"], []).append(pr)
@@ -301,14 +330,10 @@ def render(prs, projects, notes, username):
     merged_total = sum(1 for pr in prs if pr["state"] == "merged")
 
     search_url = "https://github.com/pulls?" + urlencode({"q": search_query(username) + " is:merged"})
-    lines = [
-        f"> As of {today}: **{len(prs)} PRs** submitted across **{len(by_repo)} projects**, **{merged_total} merged**.",
-        "",
-    ]
-    for index, (repo, repo_prs) in enumerate(repos_sorted):
-        color = BADGE_COLORS[index % len(BADGE_COLORS)]
+    lines = []
+    for repo, repo_prs in repos_sorted:
         slug = repo.replace("/", "--")
-        lines.append(render_repo_block(repo, repo_prs, projects[repo]["stars"], notes, color, slug, username))
+        lines.append(render_repo_block(repo, repo_prs, projects[repo]["stars"], notes, slug, username))
         lines.append("")
     lines.append(f"[View all merged Pull Requests →]({search_url})")
     return "\n".join(lines)
@@ -324,6 +349,34 @@ def update_readme(current, generated):
     return before + START + "\n" + generated + "\n" + END + after
 
 
+def write_row_svgs(by_repo):
+    """Write one SVG per PR row (light + dark); drop stale SVGs from older runs."""
+    ASSETS_DIR.mkdir(exist_ok=True)
+    expected = set()
+    for repo, repo_prs in by_repo.items():
+        slug = repo.replace("/", "--")
+        count = len(repo_prs)
+        for index, pr in enumerate(repo_prs):
+            if count == 1:
+                position = "only"
+            elif index == 0:
+                position = "first"
+            elif index == count - 1:
+                position = "last"
+            else:
+                position = "middle"
+            for theme in ("light", "dark"):
+                name = f"{slug}-{pr['number']}-{theme}.svg"
+                expected.add(name)
+                (ASSETS_DIR / name).write_text(
+                    render_row(pr, dark=theme == "dark", position=position), encoding="utf-8"
+                )
+    for old in ASSETS_DIR.glob("*.svg"):
+        if old.name not in expected:
+            old.unlink()  # stale row from a previous layout
+    return len(expected)
+
+
 def main():
     username = os.environ.get("PROFILE_USER", "konlue").strip()
     if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9-]{0,38}", username):
@@ -337,24 +390,18 @@ def main():
     repos = sorted({pr["repo"] for pr in prs})
     projects = fetch_projects(repos, token)
 
-    updated = update_readme(current, render(prs, projects, notes, username))
-    if updated != current:
-        README_PATH.write_text(updated, encoding="utf-8")
-
     by_repo = {}
     for pr in prs:
         by_repo.setdefault(pr["repo"], []).append(pr)
-    ASSETS_DIR.mkdir(exist_ok=True)
-    for repo, repo_prs in by_repo.items():
-        slug = repo.replace("/", "--")
-        for theme in ("light", "dark"):
-            (ASSETS_DIR / f"{slug}-{theme}.svg").write_text(
-                render_card(repo_prs, slug, projects, dark=theme == "dark"), encoding="utf-8"
-            )
+
+    updated = update_readme(current, render(prs, projects, notes, username))
+    if updated != current:
+        README_PATH.write_text(updated, encoding="utf-8")
+    svg_count = write_row_svgs(by_repo)
 
     merged_total = sum(1 for pr in prs if pr["state"] == "merged")
     print(f"Profile updated: {len(prs)} PRs ({merged_total} merged) across {len(repos)} projects, "
-          f"{len(by_repo) * 2} SVGs written to assets/")
+          f"{svg_count} row SVGs written to assets/")
 
 
 if __name__ == "__main__":
