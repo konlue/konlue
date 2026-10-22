@@ -1,0 +1,65 @@
+name: Update profile
+
+on:
+  schedule:
+    # 08:23 Asia/Shanghai; GitHub may delay scheduled runs.
+    - cron: '23 0 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - scripts/**
+      - .github/workflows/update-profile.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out profile
+        uses: actions/checkout@v4
+
+      - name: Refresh open-source PR section
+        env:
+          PROFILE_USER: ${{ github.repository_owner }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/update_prs.py
+
+      - name: Validate generated section
+        run: |
+          python3 - <<'PY'
+          import re
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          text = Path("README.md").read_text(encoding="utf-8")
+          assert text.count("<!-- OPEN_SOURCE_PRS:START -->") == 1, "missing START marker"
+          assert text.count("<!-- OPEN_SOURCE_PRS:END -->") == 1, "missing END marker"
+          region = text.split("<!-- OPEN_SOURCE_PRS:START -->")[1].split("<!-- OPEN_SOURCE_PRS:END -->")[0]
+          assert "<picture>" in region, "no contribution card generated"
+          assert not re.search(r"[\u4e00-\u9fff]", region), "generated section must stay English-only"
+
+          svgs = sorted(Path("assets").glob("*.svg"))
+          assert svgs, "no SVGs generated"
+          for path in svgs:
+              root = ET.parse(path).getroot()
+              assert root.tag.endswith("}svg") or root.tag == "svg", path
+              assert path.stat().st_size > 1000, path
+          print(f"generated section OK ({len(svgs)} SVGs)")
+          PY
+
+      - name: Publish refreshed profile
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets/
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: refresh open-source PR section"
+          git push

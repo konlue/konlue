@@ -1,0 +1,5 @@
+# Local agent workspace, not part of the profile
+.workbuddy/
+
+# Local draft copy, superseded by README.md
+README - 副本.md

@@ -1,0 +1,10 @@
+{
+  "apache/shenyu": {
+    "about": "**Apache ShenYu** — Java-native API gateway for service proxy, protocol conversion and API governance.",
+    "did": "Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus registry cleanup, dependency slimming and release notes. Currently working on plugin fault-tolerance eviction and K8s scaler wiring."
+  },
+  "agentic-ai-java/argi": {
+    "about": "**ARGI** — Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.",
+    "did": "The opt-in ToolCall argument-validation gate (local JSON Schema `$ref` expansion, resource limits), a unified tool-failure status contract, the AgentResult delivery contract with structured-output finalizer, and a fix for user-registered KeyStrategy loss during state cloning. Currently working on streaming delivery boundaries."
+  }
+}
