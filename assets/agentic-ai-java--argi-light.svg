@@ -14,7 +14,7 @@
 </g>
 <text x="104" y="97" fill="#26322f" font-size="15" font-weight="700">agentic-ai-java/argi <tspan fill="#52625d" font-weight="400">/ #179</tspan></text>
 <text x="104" y="119" fill="#52625d" font-size="13">feat(agent): add streaming delivery boundary with bounded format repair (T3…</text>
-<text x="762" y="107" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">127</text>
+<text x="762" y="107" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">128</text>
 <path d="M5 20H8V22H3V16H5V20ZM21 22H16V20H19V16H21V22ZM10 20H8V18H10V20ZM16 20H14V18H16V20ZM14 18H10V16H14V18ZM7 16H5V13H7V16ZM19 16H17V13H19V16ZM5 13H3V11H5V13ZM21 13H19V11H21V13ZM9 9H3V11H1V7H9V9ZM23 11H21V9H15V7H23V11ZM11 7H9V3H11V7ZM15 7H13V3H15V7ZM13 3H11V1H13V3Z" transform="translate(770 89)" fill="#26322f"/>
 <text x="964" y="106" text-anchor="end" class="mono" fill="#16866e" font-size="12" font-weight="700">[ FEAT ] 2026-10-21</text>
 <rect x="48" y="145" width="36" height="36" rx="3" fill="#ffffff" stroke="#52625d" stroke-opacity="0.4"/>
@@ -24,7 +24,7 @@
 </g>
 <text x="104" y="159" fill="#26322f" font-size="15" font-weight="700">agentic-ai-java/argi <tspan fill="#52625d" font-weight="400">/ #173</tspan></text>
 <text x="104" y="181" fill="#52625d" font-size="13">feat(agent): add AgentResult delivery contract with opt-in structured outpu…</text>
-<text x="762" y="169" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">127</text>
+<text x="762" y="169" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">128</text>
 <path d="M5 20H8V22H3V16H5V20ZM21 22H16V20H19V16H21V22ZM10 20H8V18H10V20ZM16 20H14V18H16V20ZM14 18H10V16H14V18ZM7 16H5V13H7V16ZM19 16H17V13H19V16ZM5 13H3V11H5V13ZM21 13H19V11H21V13ZM9 9H3V11H1V7H9V9ZM23 11H21V9H15V7H23V11ZM11 7H9V3H11V7ZM15 7H13V3H15V7ZM13 3H11V1H13V3Z" transform="translate(770 151)" fill="#26322f"/>
 <text x="964" y="168" text-anchor="end" class="mono" fill="#16866e" font-size="12" font-weight="700">[ FEAT ] 2026-10-20</text>
 <rect x="48" y="207" width="36" height="36" rx="3" fill="#ffffff" stroke="#52625d" stroke-opacity="0.4"/>
@@ -34,7 +34,7 @@
 </g>
 <text x="104" y="221" fill="#26322f" font-size="15" font-weight="700">agentic-ai-java/argi <tspan fill="#52625d" font-weight="400">/ #167</tspan></text>
 <text x="104" y="243" fill="#52625d" font-size="13">feat(agent): add registered business outcome mapping and outcome consistenc…</text>
-<text x="762" y="231" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">127</text>
+<text x="762" y="231" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">128</text>
 <path d="M5 20H8V22H3V16H5V20ZM21 22H16V20H19V16H21V22ZM10 20H8V18H10V20ZM16 20H14V18H16V20ZM14 18H10V16H14V18ZM7 16H5V13H7V16ZM19 16H17V13H19V16ZM5 13H3V11H5V13ZM21 13H19V11H21V13ZM9 9H3V11H1V7H9V9ZM23 11H21V9H15V7H23V11ZM11 7H9V3H11V7ZM15 7H13V3H15V7ZM13 3H11V1H13V3Z" transform="translate(770 213)" fill="#26322f"/>
 <text x="964" y="230" text-anchor="end" class="mono" fill="#16866e" font-size="12" font-weight="700">[ FEAT ] 2026-10-15</text>
 <rect x="48" y="269" width="36" height="36" rx="3" fill="#ffffff" stroke="#52625d" stroke-opacity="0.4"/>
@@ -44,7 +44,7 @@
 </g>
 <text x="104" y="283" fill="#26322f" font-size="15" font-weight="700">agentic-ai-java/argi <tspan fill="#52625d" font-weight="400">/ #159</tspan></text>
 <text x="104" y="305" fill="#52625d" font-size="13">feat(agent): unify tool failure status contract and remove null-status erro…</text>
-<text x="762" y="293" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">127</text>
+<text x="762" y="293" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">128</text>
 <path d="M5 20H8V22H3V16H5V20ZM21 22H16V20H19V16H21V22ZM10 20H8V18H10V20ZM16 20H14V18H16V20ZM14 18H10V16H14V18ZM7 16H5V13H7V16ZM19 16H17V13H19V16ZM5 13H3V11H5V13ZM21 13H19V11H21V13ZM9 9H3V11H1V7H9V9ZM23 11H21V9H15V7H23V11ZM11 7H9V3H11V7ZM15 7H13V3H15V7ZM13 3H11V1H13V3Z" transform="translate(770 275)" fill="#26322f"/>
 <text x="964" y="292" text-anchor="end" class="mono" fill="#16866e" font-size="12" font-weight="700">[ FEAT ] 2026-10-15</text>
 <rect x="48" y="331" width="36" height="36" rx="3" fill="#ffffff" stroke="#52625d" stroke-opacity="0.4"/>
@@ -54,7 +54,7 @@
 </g>
 <text x="104" y="345" fill="#26322f" font-size="15" font-weight="700">agentic-ai-java/argi <tspan fill="#52625d" font-weight="400">/ #151</tspan></text>
 <text x="104" y="367" fill="#52625d" font-size="13">feat(agent): add resource limits and local $ref expansion to tool argument…</text>
-<text x="762" y="355" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">127</text>
+<text x="762" y="355" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">128</text>
 <path d="M5 20H8V22H3V16H5V20ZM21 22H16V20H19V16H21V22ZM10 20H8V18H10V20ZM16 20H14V18H16V20ZM14 18H10V16H14V18ZM7 16H5V13H7V16ZM19 16H17V13H19V16ZM5 13H3V11H5V13ZM21 13H19V11H21V13ZM9 9H3V11H1V7H9V9ZM23 11H21V9H15V7H23V11ZM11 7H9V3H11V7ZM15 7H13V3H15V7ZM13 3H11V1H13V3Z" transform="translate(770 337)" fill="#26322f"/>
 <text x="964" y="354" text-anchor="end" class="mono" fill="#16866e" font-size="12" font-weight="700">[ FEAT ] 2026-10-12</text>
 <rect x="48" y="393" width="36" height="36" rx="3" fill="#ffffff" stroke="#52625d" stroke-opacity="0.4"/>
@@ -64,7 +64,7 @@
 </g>
 <text x="104" y="407" fill="#26322f" font-size="15" font-weight="700">agentic-ai-java/argi <tspan fill="#52625d" font-weight="400">/ #149</tspan></text>
 <text x="104" y="429" fill="#52625d" font-size="13">feat(agent): add opt-in ToolCall argument validation gate before dispatch (…</text>
-<text x="762" y="417" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">127</text>
+<text x="762" y="417" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">128</text>
 <path d="M5 20H8V22H3V16H5V20ZM21 22H16V20H19V16H21V22ZM10 20H8V18H10V20ZM16 20H14V18H16V20ZM14 18H10V16H14V18ZM7 16H5V13H7V16ZM19 16H17V13H19V16ZM5 13H3V11H5V13ZM21 13H19V11H21V13ZM9 9H3V11H1V7H9V9ZM23 11H21V9H15V7H23V11ZM11 7H9V3H11V7ZM15 7H13V3H15V7ZM13 3H11V1H13V3Z" transform="translate(770 399)" fill="#26322f"/>
 <text x="964" y="416" text-anchor="end" class="mono" fill="#16866e" font-size="12" font-weight="700">[ FEAT ] 2026-10-10</text>
 <rect x="48" y="455" width="36" height="36" rx="3" fill="#ffffff" stroke="#52625d" stroke-opacity="0.4"/>
@@ -73,7 +73,7 @@
 </g>
 <text x="104" y="469" fill="#26322f" font-size="15" font-weight="700">agentic-ai-java/argi <tspan fill="#52625d" font-weight="400">/ #116</tspan></text>
 <text x="104" y="491" fill="#52625d" font-size="13">chore(graph): add missing Apache license header to CloneStateKeyStrategyPol…</text>
-<text x="762" y="479" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">127</text>
+<text x="762" y="479" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">128</text>
 <path d="M5 20H8V22H3V16H5V20ZM21 22H16V20H19V16H21V22ZM10 20H8V18H10V20ZM16 20H14V18H16V20ZM14 18H10V16H14V18ZM7 16H5V13H7V16ZM19 16H17V13H19V16ZM5 13H3V11H5V13ZM21 13H19V11H21V13ZM9 9H3V11H1V7H9V9ZM23 11H21V9H15V7H23V11ZM11 7H9V3H11V7ZM15 7H13V3H15V7ZM13 3H11V1H13V3Z" transform="translate(770 461)" fill="#26322f"/>
 <text x="964" y="478" text-anchor="end" class="mono" fill="#52625d" font-size="12" font-weight="700">[ TOOL ] CLOSED</text>
 <rect x="48" y="517" width="36" height="36" rx="3" fill="#ffffff" stroke="#52625d" stroke-opacity="0.4"/>
@@ -83,7 +83,7 @@
 </g>
 <text x="104" y="531" fill="#26322f" font-size="15" font-weight="700">agentic-ai-java/argi <tspan fill="#52625d" font-weight="400">/ #115</tspan></text>
 <text x="104" y="553" fill="#52625d" font-size="13">fix(graph): preserve user-registered input KeyStrategy across state cloning…</text>
-<text x="762" y="541" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">127</text>
+<text x="762" y="541" text-anchor="end" class="mono" fill="#26322f" font-size="16" font-weight="700">128</text>
 <path d="M5 20H8V22H3V16H5V20ZM21 22H16V20H19V16H21V22ZM10 20H8V18H10V20ZM16 20H14V18H16V20ZM14 18H10V16H14V18ZM7 16H5V13H7V16ZM19 16H17V13H19V16ZM5 13H3V11H5V13ZM21 13H19V11H21V13ZM9 9H3V11H1V7H9V9ZM23 11H21V9H15V7H23V11ZM11 7H9V3H11V7ZM15 7H13V3H15V7ZM13 3H11V1H13V3Z" transform="translate(770 523)" fill="#26322f"/>
 <text x="964" y="540" text-anchor="end" class="mono" fill="#16866e" font-size="12" font-weight="700">[ FIX ] 2026-10-07</text>
 </svg>
