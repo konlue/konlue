@@ -19,10 +19,11 @@
 </div>
 </br>
 
-<h2 align="left"><img src="./assets/ui/git-pull-request.svg" width="20" height="20" align="absmiddle" alt="Pull requests" /> Contributing to</h2>
+<h2 align="left"><img src="./assets/ui/git-pull-request.svg" width="24" height="24" align="absmiddle" alt="Pull requests" /> Contributing to</h2>
 
 <!-- OPEN_SOURCE_PRS:START -->
-<h4 align="left"><img src="./assets/ui/folder.svg" width="24" height="24" align="absmiddle" alt="repository"> <a href="https://github.com/apache/shenyu"><b>apache/shenyu</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="24" height="24" align="absmiddle" alt="stars"> <b>8.9k</b></h4>
+
+<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/apache/shenyu"><b>apache/shenyu</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>8.9k</b></h4>
 
 > Java-native API gateway for service proxy, protocol conversion and API governance.
 
@@ -246,7 +247,7 @@
 
 </details>
 
-<h4 align="left"><img src="./assets/ui/folder.svg" width="24" height="24" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="24" height="24" align="absmiddle" alt="stars"> <b>128</b></h4>
+<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>128</b></h4>
 
 > Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
 

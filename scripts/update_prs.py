@@ -83,12 +83,12 @@ DEFAULT_REPOS = "apache/shenyu,agentic-ai-java/argi"
 ROW_W, ROW_H = 1000, 62
 TITLE_MAX = 90  # titles longer than this are truncated with an ellipsis
 # Pixel-art icons (Pixelarticon) used in the README chrome around the cards.
-# folder/star sit in the project title line, sized like the contact icons
-# (24px, the pixel grid's native size); check/circle/chevron are inline with
-# 16px summary text, so they stay smaller.
+# folder/star sit in the project title line (22px, tuned under the 24px
+# contact icons so the h4 line stays compact); check/circle/chevron are
+# inline with 16px summary text, so they stay smaller.
 UI = {
-    "folder": '<img src="./assets/ui/folder.svg" width="24" height="24" align="absmiddle" alt="repository">',
-    "star": '<img src="./assets/ui/star.svg" width="24" height="24" align="absmiddle" alt="stars">',
+    "folder": '<img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository">',
+    "star": '<img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars">',
     "check": '<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged">',
     "circle": '<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open">',
     "chevron": '<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">',
@@ -346,7 +346,7 @@ def update_readme(current, generated):
     if END not in rest:
         raise ValueError("README section markers are reversed")
     _, after = rest.split(END, 1)
-    return before + START + "\n" + generated + "\n" + END + after
+    return before + START + "\n\n" + generated + "\n" + END + after
 
 
 def write_row_svgs(by_repo):
