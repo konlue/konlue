@@ -30,7 +30,7 @@
 **What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus registry cleanup, dependency slimming and release notes. Currently working on plugin fault-tolerance eviction and K8s scaler wiring.
 
 <details>
-<summary>35 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 27 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 7 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
+<summary>35 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 28 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 6 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
 
 <a href="https://github.com/apache/shenyu/pull/7984">
 <picture>
@@ -47,7 +47,7 @@
 <a href="https://github.com/apache/shenyu/pull/7938">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-7938-dark.svg">
-  <img src="./assets/apache--shenyu-7938-light.svg" width="100%" align="top" alt="#7938 fix(mqtt): deduplicate retransmitted qos2 publishes with inbound in-flight state (#7919) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-7938-light.svg" width="100%" align="top" alt="#7938 fix(mqtt): deduplicate retransmitted qos2 publishes with inbound in-flight state (#7919) [ FIX ] 2026-10-23">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/7925">
@@ -247,7 +247,7 @@
 
 </details>
 
-<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>128</b></h4>
+<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>129</b></h4>
 
 > Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
 
