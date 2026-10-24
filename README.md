@@ -30,8 +30,26 @@
 **What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus registry cleanup, dependency slimming and release notes. Currently working on plugin fault-tolerance eviction and K8s scaler wiring.
 
 <details>
-<summary>35 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 28 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 6 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
+<summary>38 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 28 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 9 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8084">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8084-dark.svg">
+  <img src="./assets/apache--shenyu-8084-light.svg" width="100%" align="top" alt="#8084 fix(mcp-server): resolve SSE transports by the canonical server path (#8045) [ FIX ] OPEN">
+</picture>
+</a>
+<a href="https://github.com/apache/shenyu/pull/8075">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8075-dark.svg">
+  <img src="./assets/apache--shenyu-8075-light.svg" width="100%" align="top" alt="#8075 fix(mqtt): make inbound packet id register/release atomic per client (#8021) [ FIX ] OPEN">
+</picture>
+</a>
+<a href="https://github.com/apache/shenyu/pull/8035">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8035-dark.svg">
+  <img src="./assets/apache--shenyu-8035-light.svg" width="100%" align="top" alt="#8035 fix(grpc): drain client and bidi streams according to outbound readiness (#7927) [ FIX ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/7984">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-7984-dark.svg">
