@@ -30,24 +30,36 @@
 **What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus registry cleanup, dependency slimming and release notes. Currently working on plugin fault-tolerance eviction and K8s scaler wiring.
 
 <details>
-<summary>38 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 28 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 9 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
+<summary>40 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 34 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 5 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8098">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8098-dark.svg">
+  <img src="./assets/apache--shenyu-8098-light.svg" width="100%" align="top" alt="#8098 feat(divide): add optional sticky session affinity composed with load balancing (#8037) [ FEAT ] OPEN">
+</picture>
+</a>
+<a href="https://github.com/apache/shenyu/pull/8086">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8086-dark.svg">
+  <img src="./assets/apache--shenyu-8086-light.svg" width="100%" align="top" alt="#8086 fix(mcp-server): rebuild the SSE transport when the message endpoint changes (#8044) [ FIX ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8084">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8084-dark.svg">
-  <img src="./assets/apache--shenyu-8084-light.svg" width="100%" align="top" alt="#8084 fix(mcp-server): resolve SSE transports by the canonical server path (#8045) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-8084-light.svg" width="100%" align="top" alt="#8084 fix(mcp-server): resolve SSE transports by the canonical server path (#8045) [ FIX ] 2026-10-25">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8075">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8075-dark.svg">
-  <img src="./assets/apache--shenyu-8075-light.svg" width="100%" align="top" alt="#8075 fix(mqtt): make inbound packet id register/release atomic per client (#8021) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-8075-light.svg" width="100%" align="top" alt="#8075 fix(mqtt): make inbound packet id register/release atomic per client (#8021) [ FIX ] 2026-10-24">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8035">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8035-dark.svg">
-  <img src="./assets/apache--shenyu-8035-light.svg" width="100%" align="top" alt="#8035 fix(grpc): drain client and bidi streams according to outbound readiness (#7927) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-8035-light.svg" width="100%" align="top" alt="#8035 fix(grpc): drain client and bidi streams according to outbound readiness (#7927) [ FIX ] 2026-10-24">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/7984">
@@ -137,7 +149,7 @@
 <a href="https://github.com/apache/shenyu/pull/7780">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-7780-dark.svg">
-  <img src="./assets/apache--shenyu-7780-light.svg" width="100%" align="top" alt="#7780 fix(admin): keep accepted heartbeats when restoring instances from the database (#7763) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-7780-light.svg" width="100%" align="top" alt="#7780 fix(admin): keep accepted heartbeats when restoring instances from the database (#7763) [ FIX ] 2026-10-25">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/7776">
@@ -149,7 +161,7 @@
 <a href="https://github.com/apache/shenyu/pull/7766">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-7766-dark.svg">
-  <img src="./assets/apache--shenyu-7766-light.svg" width="100%" align="top" alt="#7766 fix(logging): clear the selector sampler override when its handle is emptied (#7750) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-7766-light.svg" width="100%" align="top" alt="#7766 fix(logging): clear the selector sampler override when its handle is emptied (#7750) [ FIX ] 2026-10-25">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/7758">
@@ -173,7 +185,7 @@
 <a href="https://github.com/apache/shenyu/pull/7746">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-7746-dark.svg">
-  <img src="./assets/apache--shenyu-7746-light.svg" width="100%" align="top" alt="#7746 fix(dubbo): resolve single name-mapped parameters instead of using the mapping JSON as a type name (#7736) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-7746-light.svg" width="100%" align="top" alt="#7746 fix(dubbo): resolve single name-mapped parameters instead of using the mapping JSON as a type name (#7736) [ FIX ] 2026-10-25">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/7742">
@@ -265,7 +277,7 @@
 
 </details>
 
-<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>129</b></h4>
+<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>130</b></h4>
 
 > Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
 
