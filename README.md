@@ -30,24 +30,30 @@
 **What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus registry cleanup, dependency slimming and release notes. Currently working on plugin fault-tolerance eviction and K8s scaler wiring.
 
 <details>
-<summary>41 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 34 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 6 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
+<summary>42 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 37 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 4 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8130">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8130-dark.svg">
+  <img src="./assets/apache--shenyu-8130-light.svg" width="100%" align="top" alt="#8130 feat(admin,loadbalancer): add readiness admission and explicit resume for business instances (#8042) [ FEAT ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8101">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8101-dark.svg">
-  <img src="./assets/apache--shenyu-8101-light.svg" width="100%" align="top" alt="#8101 feat(admin,divide): draining admission lets instances stop receiving new work without deregistering (#8042) [ FEAT ] OPEN">
+  <img src="./assets/apache--shenyu-8101-light.svg" width="100%" align="top" alt="#8101 feat(admin,divide): draining admission lets instances stop receiving new work without deregistering (#8042) [ FEAT ] 2026-10-26">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8098">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8098-dark.svg">
-  <img src="./assets/apache--shenyu-8098-light.svg" width="100%" align="top" alt="#8098 feat(divide): add optional sticky session affinity composed with load balancing (#8037) [ FEAT ] OPEN">
+  <img src="./assets/apache--shenyu-8098-light.svg" width="100%" align="top" alt="#8098 feat(divide): add optional sticky session affinity composed with load balancing (#8037) [ FEAT ] 2026-10-26">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8086">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8086-dark.svg">
-  <img src="./assets/apache--shenyu-8086-light.svg" width="100%" align="top" alt="#8086 fix(mcp-server): rebuild the SSE transport when the message endpoint changes (#8044) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-8086-light.svg" width="100%" align="top" alt="#8086 fix(mcp-server): rebuild the SSE transport when the message endpoint changes (#8044) [ FIX ] 2026-10-26">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8084">
