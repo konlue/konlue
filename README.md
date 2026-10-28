@@ -30,8 +30,14 @@
 **What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus registry cleanup, dependency slimming and release notes. Currently working on plugin fault-tolerance eviction and K8s scaler wiring.
 
 <details>
-<summary>42 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 37 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 4 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
+<summary>43 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 40 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 2 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8183">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8183-dark.svg">
+  <img src="./assets/apache--shenyu-8183-light.svg" width="100%" align="top" alt="#8183 fix(dubbo): keep provider identity through Dubbo bookkeeping and count inflight in a consumer filter (#8132) [ FIX ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8130">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8130-dark.svg">
@@ -77,7 +83,7 @@
 <a href="https://github.com/apache/shenyu/pull/7984">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-7984-dark.svg">
-  <img src="./assets/apache--shenyu-7984-light.svg" width="100%" align="top" alt="#7984 fix(plugin): cache negative match results only when the candidate set is path-determined (#7977) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-7984-light.svg" width="100%" align="top" alt="#7984 fix(plugin): cache negative match results only when the candidate set is path-determined (#7977) [ FIX ] 2026-10-27">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/7939">
@@ -101,7 +107,7 @@
 <a href="https://github.com/apache/shenyu/pull/7917">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-7917-dark.svg">
-  <img src="./assets/apache--shenyu-7917-light.svg" width="100%" align="top" alt="#7917 fix(admin): back k8s client/scaler beans off their own types and guard the missing client (#7912) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-7917-light.svg" width="100%" align="top" alt="#7917 fix(admin): back k8s client/scaler beans off their own types and guard the missing client (#7912) [ FIX ] 2026-10-27">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/7887">
@@ -167,7 +173,7 @@
 <a href="https://github.com/apache/shenyu/pull/7776">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-7776-dark.svg">
-  <img src="./assets/apache--shenyu-7776-light.svg" width="100%" align="top" alt="#7776 fix(admin): ignore heartbeats with an incomplete instance identity (#7764) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-7776-light.svg" width="100%" align="top" alt="#7776 fix(admin): ignore heartbeats with an incomplete instance identity (#7764) [ FIX ] 2026-10-27">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/7766">
