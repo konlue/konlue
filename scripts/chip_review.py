@@ -3,7 +3,9 @@
 
 Replicates the exact tile geometry and colour rules from make_tech_chips.py
 using PIL, laid out the way README.md shows the section (two groups per row,
-uniform 90px cells so every icon sits on the same grid).
+uniform CELL-wide cells so every icon sits on the same grid). README.md ships
+the real thing as one SVG per row in assets/ui/row/ - check .preview.html for
+the authoritative render.
 """
 
 import sys
@@ -106,7 +108,7 @@ def main():
             y += M.TILE_H + 22
         y += 14
 
-    note = (f"geometry/colours identical to assets/ui/tech/*.svg ({M.GRID}x{M.GRID} grid @{M.SCALE}x "
+    note = (f"geometry/colours identical to assets/ui/row/*.svg ({M.GRID}x{M.GRID} grid @{M.SCALE}x "
             f"icons, uniform {M.CELL}px cells, Consolas {M.LABEL_SIZE}px labels, 3x supersample)")
     ImageDraw.Draw(img).text((margin * S, (y + 4) * S), note, font=font_note, fill=hx("#59636e"))
     img = img.crop((0, 0, W * S, (y + 28) * S))

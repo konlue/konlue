@@ -44,7 +44,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT_DIR = ROOT / "assets" / "ui" / "tech"
+OUT_DIR = ROOT / "assets" / "ui" / "row"
 SRC_DIR = ROOT / "scripts" / "brand-icons"
 GRID_CACHE = ROOT / "scripts" / "tech-icon-grids.json"
 
@@ -61,10 +61,13 @@ LABEL_GAP = 3        # icon bottom -> label top
 LABEL_ASCENT = 10    # baseline offset inside the label box
 LABEL_BOX = 14       # label line box height
 # Every tile has the same width, so icons line up in one grid across rows.
-# 88px is the widest pitch that still fits two groups (8 tiles + 2 headers)
-# inside the ~876px GitHub markdown column; longer labels are condensed to
-# fit with SVG textLength instead of widening their cell.
-CELL = 88
+# A row is ONE image (header A + 4 tiles + header B + 4 tiles), not a run of
+# inline <picture>s: GitHub wraps an over-long line of inline images, which is
+# exactly what happened at 88px (8 tiles + 2 headers + spacers = 872px, wider
+# than the ~840px README column). One image cannot wrap - it is scaled down
+# instead - so the row is composed here at 824px, safely inside the column.
+CELL = 86
+ROW_GAP = 16         # gap between the two category groups inside a row
 GROUP_ICON = 24      # category header: pixelarticon size
 GROUP_W = 60         # category header: fixed width -> identical columns
 TILE_H = PAD + ICON + LABEL_GAP + LABEL_BOX + PAD      # 73
@@ -416,19 +419,15 @@ def icon_rects(grid, x0, y0, theme):
     return "".join(parts)
 
 
-def render_tile(name, brand, grid, theme):
-    width = tile_width(name)
-    icon_x = (width - ICON) // 2
+def tile_fragment(name, brand, grid, theme, x):
+    """One tech tile drawn at x: pixel icon + label centred under it."""
+    icon_x = x + (CELL - ICON) // 2
     text_c = shift(brand, LABEL_SHIFT[theme])
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{TILE_H}" '
-        f'viewBox="0 0 {width} {TILE_H}" role="img">\n'
-        f'  <title>{escape(name)}</title>\n'
-        f'  <g shape-rendering="crispEdges">{icon_rects(grid, icon_x, PAD, theme)}</g>\n'
-        f'  <text x="{width / 2:g}" y="{LABEL_BASELINE}" text-anchor="middle"{label_attrs(name)} '
+        f'<g shape-rendering="crispEdges">{icon_rects(grid, icon_x, PAD, theme)}</g>'
+        f'<text x="{x + CELL / 2:g}" y="{LABEL_BASELINE}" text-anchor="middle"{label_attrs(name)} '
         f'font-family="{FONT_STACK}" font-size="{LABEL_SIZE}" fill="#{text_c}">'
-        f'{escape(name)}</text>\n'
-        f'</svg>\n'
+        f'{escape(name)}</text>'
     )
 
 
@@ -446,52 +445,77 @@ GROUP_DIR = ROOT / "assets" / "ui" / "group"
 GROUP_INK = {"light": "#57606a", "dark": "#9198a1"}
 
 
-def render_group(name, icon_path, theme):
-    svg_text = icon_path.read_text(encoding="utf-8")
+def header_fragment(group, theme, x):
+    """Category header (pixelarticon + bold label) drawn at x."""
+    filename, _slug = GROUPS[group]
+    svg_text = (ROOT / "assets" / "ui" / filename).read_text(encoding="utf-8")
     paths = "".join(re.findall(r"<path[^>]*/>|<path[^>]*>[\s\S]*?</path>", svg_text))
     paths = re.sub(r'\sfill="[^"]*"', "", paths)
     ink = GROUP_INK[theme]
+    top = (PAD + ICON - GROUP_ICON) // 2      # centre on the icon band
     return (
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="{GROUP_W}" height="{GROUP_ICON}" '
-        f'viewBox="0 0 {GROUP_W} {GROUP_ICON}" role="img">\n'
-        f'  <title>{escape(name)}</title>\n'
-        f'  <g fill="{ink}" shape-rendering="crispEdges">{paths}</g>\n'
-        f'  <text x="{GROUP_ICON + 4}" y="16" font-family="{FONT_STACK}" font-size="11" '
-        f'font-weight="700" fill="{ink}">{escape(name)}</text>\n'
+        f'<g transform="translate({x},{top})" fill="{ink}" shape-rendering="crispEdges">{paths}</g>'
+        f'<text x="{x + GROUP_ICON + 4}" y="{top + 16}" font-family="{FONT_STACK}" '
+        f'font-size="11" font-weight="700" fill="{ink}">{escape(group)}</text>'
+    )
+
+
+def row_width(groups):
+    return len(groups) * GROUP_W + sum(len(entries) for _g, entries in groups) * CELL \
+        + ROW_GAP * (len(groups) - 1)
+
+
+def render_row(groups, grids, theme):
+    """One row = one SVG, so the two categories can never be split by wrapping."""
+    x, parts = 0, []
+    for index, (group, entries) in enumerate(groups):
+        if index:
+            x += ROW_GAP
+        parts.append(header_fragment(group, theme, x))
+        x += GROUP_W
+        for entry in entries:
+            name, _slug, brand = entry[:3]
+            parts.append(tile_fragment(name, brand, grids[name], theme, x))
+            x += CELL
+    width = row_width(groups)
+    alt = " / ".join(f"{g}: " + ", ".join(e[0] for e in entries) for g, entries in groups)
+    return (
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{TILE_H}" '
+        f'viewBox="0 0 {width} {TILE_H}" role="img">\n'
+        f'  <title>{escape(alt)}</title>\n'
+        f'  {"".join(parts)}\n'
         f'</svg>\n'
     )
+def rows():
+    return [TECHS[i:i + 2] for i in range(0, len(TECHS), 2)]
+
+
+def row_slug(groups):
+    return "-".join(GROUPS[g][1] for g, _e in groups)
 
 
 def main():
     grids = build_grids()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    written = 0
-    for _group, entries in TECHS:
-        for entry in entries:
-            name, slug, brand = entry[:3]
-            for theme in ("light", "dark"):
-                path = OUT_DIR / f"{slug}-{theme}.svg"
-                path.write_text(render_tile(name, brand, grids[name], theme), encoding="utf-8")
-                written += 1
-    # drop tiles for techs that were removed from TECHS
-    expected = {f"{e[1]}-{theme}.svg" for _g, entries in TECHS for e in entries
-                for theme in ("light", "dark")}
+    written = []
+    for group_pair in rows():
+        slug = row_slug(group_pair)
+        for theme in ("light", "dark"):
+            path = OUT_DIR / f"{slug}-{theme}.svg"
+            path.write_text(render_row(group_pair, grids, theme), encoding="utf-8")
+            written.append((path, row_width(group_pair)))
+    expected = {f"{row_slug(r)}-{t}.svg" for r in rows() for t in ("light", "dark")}
     for old in OUT_DIR.glob("*.svg"):
         if old.name not in expected:
             old.unlink()
-
-    GROUP_DIR.mkdir(parents=True, exist_ok=True)
-    for name, (filename, slug) in GROUPS.items():
-        for theme in ("light", "dark"):
-            (GROUP_DIR / f"{slug}-{theme}.svg").write_text(
-                render_group(name, ROOT / "assets" / "ui" / filename, theme), encoding="utf-8")
-            written += 1
-    for old in GROUP_DIR.glob("*.svg"):
-        if not any(old.name.startswith(f"{slug}-") for _n, (_f, slug) in GROUPS.items()):
-            old.unlink()
-    print(f"wrote {written} tiles to {OUT_DIR.relative_to(ROOT)}/ (+ group headers)")
-
-
+    # tiles and standalone headers are inlined into the rows now
+    for stale in (ROOT / "assets" / "ui" / "tech", ROOT / "assets" / "ui" / "group"):
+        if stale.is_dir():
+            for f in stale.glob("*.svg"):
+                f.unlink()
+            stale.rmdir()
+    for path, width in written:
+        print(f"  {path.relative_to(ROOT)}  {width}x{TILE_H}  {path.stat().st_size // 1024}KB")
 
 
 # ---------------------------------------------------------------------------
@@ -507,30 +531,22 @@ def _picture(light, dark, alt, attrs):
 
 
 def readme_section():
-    """The Tech Stack block: two rows, two categories each, no table.
+    """The Tech Stack block: two rows, two categories each, one image per row.
 
-    Elements are concatenated without whitespace - a newline between two
-    <picture>s would cost a space character per gap and push the row past
-    GitHub's column width.
+    Composing a row into a single SVG is what keeps it on one line - inline
+    <picture> runs get wrapped by GitHub once they exceed the column width,
+    while a single image is simply scaled down.
     """
-    rows = [TECHS[i:i + 2] for i in range(0, len(TECHS), 2)]
     lines = ['<h2 align="left"><img src="./assets/ui/server.svg" width="24" height="24" '
              'align="absmiddle" alt="Stack" /> Tech Stack</h2>', ""]
-    for pair in rows:
-        cells = []
-        for index, (group, entries) in enumerate(pair):
-            if index:
-                cells.append("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
-            slug = GROUPS[group][1]
-            cells.append(_picture(f"./assets/ui/group/{slug}-light.svg",
-                                  f"./assets/ui/group/{slug}-dark.svg", group,
-                                  ' width="60" height="24" align="absmiddle"'))
-            cells.append("&nbsp;")
-            for entry in entries:
-                cells.append(_picture(f"./assets/ui/tech/{entry[1]}-light.svg",
-                                      f"./assets/ui/tech/{entry[1]}-dark.svg", entry[0],
-                                      ' align="absmiddle"'))
-        lines += ['<p align="left">' + "".join(cells) + "</p>", ""]
+    for group_pair in rows():
+        slug = row_slug(group_pair)
+        alt = " / ".join(f"{g}: " + ", ".join(e[0] for e in entries) for g, entries in group_pair)
+        lines += [
+            '<p align="left">' + _picture(f"./assets/ui/row/{slug}-light.svg",
+                                          f"./assets/ui/row/{slug}-dark.svg", alt, "") + "</p>",
+            "",
+        ]
     return "\n".join(lines).rstrip() + "\n"
 
 
