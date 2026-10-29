@@ -77,7 +77,7 @@ STARS_TTL = timedelta(hours=24)
 # Projects to showcase (comma-separated, overridable via PROFILE_REPOS).
 # Only PRs to these repositories appear in the section; add a repo here (and
 # to scripts/repo_notes.json for its intro text) to feature more projects.
-DEFAULT_REPOS = "apache/shenyu,agentic-ai-java/argi"
+DEFAULT_REPOS = "apache/shenyu,agentic-ai-java/argi,agentscope-ai/agentscope"
 # Row geometry: 1000x62 px per row, stacked seamlessly (background matches
 # the GitHub page colour, so no inline-image gaps remain).
 ROW_W, ROW_H = 1000, 62

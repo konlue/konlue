@@ -1,10 +1,14 @@
 {
   "agentic-ai-java/argi": {
-    "stars": 128,
-    "fetched": "2026-10-22"
+    "stars": 132,
+    "fetched": "2026-10-29"
   },
   "apache/shenyu": {
-    "stars": 8903,
-    "fetched": "2026-10-22"
+    "stars": 8906,
+    "fetched": "2026-10-29"
+  },
+  "agentscope-ai/agentscope": {
+    "stars": 34710,
+    "fetched": "2026-10-29"
   }
 }

@@ -1,10 +1,14 @@
 {
   "apache/shenyu": {
     "about": "Java-native API gateway for service proxy, protocol conversion and API governance.",
-    "did": "Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus registry cleanup, dependency slimming and release notes. Currently working on plugin fault-tolerance eviction and K8s scaler wiring."
+    "did": "Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus traffic-shaping features in the `divide` plugin: optional sticky session affinity with deterministic key selection, and draining / readiness admission so an instance can stop taking new traffic without deregistering. Also MQTT and gRPC connection-lifecycle fixes, MCP SSE transport repair, registry cleanup and dependency slimming. Currently working on Dubbo provider identity and keeping credentials out of config sync."
   },
   "agentic-ai-java/argi": {
     "about": "Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.",
-    "did": "The opt-in ToolCall argument-validation gate (local JSON Schema `$ref` expansion, resource limits), a unified tool-failure status contract, the AgentResult delivery contract with structured-output finalizer, and a fix for user-registered KeyStrategy loss during state cloning. Currently working on streaming delivery boundaries."
+    "did": "The opt-in ToolCall argument-validation gate (local JSON Schema `$ref` expansion, resource limits), a unified tool-failure status contract, the AgentResult delivery contract with a structured-output finalizer and registered business-outcome mapping, plus the fix for user-registered KeyStrategy loss across state cloning and snapshots. Currently working on standalone ReAct tool selection and cancelling in-flight A2A streams."
+  },
+  "agentscope-ai/agentscope": {
+    "about": "Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.",
+    "did": "Model-layer fixes in the Python runtime: `thinking_enable` is now tri-state for the DeepSeek and DashScope chat models, so leaving it unset no longer force-sends `thinking.type=disabled` / `enable_thinking=false` and the server default applies, while explicit on/off still behaves exactly as before."
   }
 }

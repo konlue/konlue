@@ -27,7 +27,7 @@
 
 > Java-native API gateway for service proxy, protocol conversion and API governance.
 
-**What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus registry cleanup, dependency slimming and release notes. Currently working on plugin fault-tolerance eviction and K8s scaler wiring.
+**What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus traffic-shaping features in the `divide` plugin: optional sticky session affinity with deterministic key selection, and draining / readiness admission so an instance can stop taking new traffic without deregistering. Also MQTT and gRPC connection-lifecycle fixes, MCP SSE transport repair, registry cleanup and dependency slimming. Currently working on Dubbo provider identity and keeping credentials out of config sync.
 
 <details>
 <summary>45 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 41 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 3 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
@@ -307,11 +307,11 @@
 
 </details>
 
-<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>131</b></h4>
+<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>132</b></h4>
 
 > Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
 
-**What I did**: The opt-in ToolCall argument-validation gate (local JSON Schema `$ref` expansion, resource limits), a unified tool-failure status contract, the AgentResult delivery contract with structured-output finalizer, and a fix for user-registered KeyStrategy loss during state cloning. Currently working on streaming delivery boundaries.
+**What I did**: The opt-in ToolCall argument-validation gate (local JSON Schema `$ref` expansion, resource limits), a unified tool-failure status contract, the AgentResult delivery contract with a structured-output finalizer and registered business-outcome mapping, plus the fix for user-registered KeyStrategy loss across state cloning and snapshots. Currently working on standalone ReAct tool selection and cancelling in-flight A2A streams.
 
 <details>
 <summary>10 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 7 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 2 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
@@ -381,5 +381,37 @@
 
 </details>
 
+<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>34.7k</b></h4>
+
+> Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
+
+**What I did**: Model-layer fixes in the Python runtime: `thinking_enable` is now tri-state for the DeepSeek and DashScope chat models, so leaving it unset no longer force-sends `thinking.type=disabled` / `enable_thinking=false` and the server default applies, while explicit on/off still behaves exactly as before.
+
+<details>
+<summary>2 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 2 merged &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
+
+<a href="https://github.com/agentscope-ai/agentscope/pull/3398">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3398-dark.svg">
+  <img src="./assets/agentscope-ai--agentscope-3398-light.svg" width="100%" align="top" alt="#3398 feat(model): make DeepSeek thinking_enable tri-state so unset no longer force-sends thinking.type=disabled [ FEAT ] 2026-10-29">
+</picture>
+</a>
+<a href="https://github.com/agentscope-ai/agentscope/pull/3192">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3192-dark.svg">
+  <img src="./assets/agentscope-ai--agentscope-3192-light.svg" width="100%" align="top" alt="#3192 feat(model): make DashScope thinking_enable tri-state [ FEAT ] 2026-10-29">
+</picture>
+</a>
+
+[View all merged PRs in agentscope-ai/agentscope →](https://github.com/agentscope-ai/agentscope/pulls?q=is%3Apr+author%3Akonlue+is%3Amerged)
+
+</details>
+
 [View all merged Pull Requests →](https://github.com/pulls?q=is%3Apr+is%3Apublic+author%3Akonlue+-user%3Akonlue+is%3Amerged)
 <!-- OPEN_SOURCE_PRS:END -->
+
+<h2 align="left"><img src="./assets/ui/server.svg" width="24" height="24" align="absmiddle" alt="Stack" /> Tech Stack</h2>
+
+<p align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/group/java-dark.svg"><img src="./assets/ui/group/java-light.svg" width="60" height="24" align="absmiddle" alt="Java"></picture>&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/java-dark.svg"><img src="./assets/ui/tech/java-light.svg" align="absmiddle" alt="Java"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/spring-boot-dark.svg"><img src="./assets/ui/tech/spring-boot-light.svg" align="absmiddle" alt="Spring Boot"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/spring-cloud-dark.svg"><img src="./assets/ui/tech/spring-cloud-light.svg" align="absmiddle" alt="Spring Cloud"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/spring-ai-dark.svg"><img src="./assets/ui/tech/spring-ai-light.svg" align="absmiddle" alt="Spring AI"></picture>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/group/ai-dark.svg"><img src="./assets/ui/group/ai-light.svg" width="60" height="24" align="absmiddle" alt="AI"></picture>&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/python-dark.svg"><img src="./assets/ui/tech/python-light.svg" align="absmiddle" alt="Python"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/fastapi-dark.svg"><img src="./assets/ui/tech/fastapi-light.svg" align="absmiddle" alt="FastAPI"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/langchain-dark.svg"><img src="./assets/ui/tech/langchain-light.svg" align="absmiddle" alt="LangChain"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/langgraph-dark.svg"><img src="./assets/ui/tech/langgraph-light.svg" align="absmiddle" alt="LangGraph"></picture></p>
+
+<p align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/group/web-dark.svg"><img src="./assets/ui/group/web-light.svg" width="60" height="24" align="absmiddle" alt="Web"></picture>&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/vue-dark.svg"><img src="./assets/ui/tech/vue-light.svg" align="absmiddle" alt="Vue"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/javascript-dark.svg"><img src="./assets/ui/tech/javascript-light.svg" align="absmiddle" alt="JavaScript"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/typescript-dark.svg"><img src="./assets/ui/tech/typescript-light.svg" align="absmiddle" alt="TypeScript"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/element-plus-dark.svg"><img src="./assets/ui/tech/element-plus-light.svg" align="absmiddle" alt="Element Plus"></picture>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/group/data-dark.svg"><img src="./assets/ui/group/data-light.svg" width="60" height="24" align="absmiddle" alt="Data"></picture>&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/mysql-dark.svg"><img src="./assets/ui/tech/mysql-light.svg" align="absmiddle" alt="MySQL"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/redis-dark.svg"><img src="./assets/ui/tech/redis-light.svg" align="absmiddle" alt="Redis"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/elasticsearch-dark.svg"><img src="./assets/ui/tech/elasticsearch-light.svg" align="absmiddle" alt="Elasticsearch"></picture><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/tech/minio-dark.svg"><img src="./assets/ui/tech/minio-light.svg" align="absmiddle" alt="MinIO"></picture></p>
