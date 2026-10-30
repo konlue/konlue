@@ -7,10 +7,10 @@ not actual pixels. This script draws the headline from a 5x8 bitmap font, one
 frame per typed character, and upscales with NEAREST, so every pixel of the
 result is a hard-edged square that matches the Tech Stack sprites.
 
-Two lines instead of one: a single 41-character run was 771px wide and 42px
-tall, a letterbox strip that dominated the page. Split in two the banner is
-483x75 - narrower and roughly 1/3 the aspect ratio. The GIF deliberately has
-no loop extension, so it types once and freezes on the finished line.
+One line, 2x: the 3x version was 771x42 and took more than half the column,
+which is why it read as oversized. At SCALE=2 the whole banner is 514x28 and
+each sprite pixel is 2x2 - the same granularity as the Tech Stack tiles. The
+GIF deliberately has no loop extension, so it types once and freezes.
 
 Output: assets/ui/typing.gif + assets/ui/typing-dark.gif (transparent), two
 files because a GIF's palette is baked in and the page needs one ink per theme.
@@ -26,12 +26,12 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 OUT_DIR = ROOT / "assets" / "ui"
 
-LINES = ["Hi, I'm konlue.", "Walking in AI Full-Stack."]
+LINES = ["Hi, I'm konlue. Walking in AI Full-Stack."]
 
 GLYPH_W, GLYPH_H = 5, 8      # 5x8 cell; rows 0-6 above the baseline, row 7 below
 TRACKING = 1                 # blank column between glyphs
-LINE_GAP = 3                 # blank rows between the two lines
-SCALE = 3                    # 1x pixel -> 3x3 screen px
+LINE_GAP = 3                 # blank rows between lines, if LINES has several
+SCALE = 2                    # 1x pixel -> 2x2 screen px (matches the tiles)
 PAD = 3                      # 1x padding around the whole banner
 CURSOR_W = 4
 CURSOR_TOP, CURSOR_BOTTOM = 0, 6   # cursor spans the text box, not the descender
