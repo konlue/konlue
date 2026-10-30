@@ -24,8 +24,14 @@
 **What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus traffic-shaping features in the `divide` plugin: optional sticky session affinity with deterministic key selection, and draining / readiness admission so an instance can stop taking new traffic without deregistering. Also MQTT and gRPC connection-lifecycle fixes, MCP SSE transport repair, registry cleanup and dependency slimming. Currently working on Dubbo provider identity and keeping credentials out of config sync.
 
 <details>
-<summary>47 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 44 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 2 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>48 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 44 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 3 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8251">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8251-dark.svg">
+  <img src="./assets/apache--shenyu-8251-light.svg" width="100%" align="top" alt="#8251 fix(divide): bind failover inflight accounting to each attempt&#x27;s response lifetime (#8158) [ FIX ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8242">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8242-dark.svg">
