@@ -30,8 +30,20 @@
 **What I did**: Bug fixes and reliability work across `admin` / `sdk` / `bootstrap` (instance heartbeats and cluster master election, Oracle compatibility, Netty event-loop lifecycle, SDK response handling), plus traffic-shaping features in the `divide` plugin: optional sticky session affinity with deterministic key selection, and draining / readiness admission so an instance can stop taking new traffic without deregistering. Also MQTT and gRPC connection-lifecycle fixes, MCP SSE transport repair, registry cleanup and dependency slimming. Currently working on Dubbo provider identity and keeping credentials out of config sync.
 
 <details>
-<summary>45 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 41 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 3 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
+<summary>47 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 44 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 2 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8242">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8242-dark.svg">
+  <img src="./assets/apache--shenyu-8242-light.svg" width="100%" align="top" alt="#8242 fix(sync): validate trusted WebSocket master redirects before forwarding credentials (#8222) [ FIX ] 2026-10-30">
+</picture>
+</a>
+<a href="https://github.com/apache/shenyu/pull/8232">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8232-dark.svg">
+  <img src="./assets/apache--shenyu-8232-light.svg" width="100%" align="top" alt="#8232 fix(bootstrap): gate local management controllers with the local feature state (#8221) [ FIX ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8226">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8226-dark.svg">
@@ -47,13 +59,13 @@
 <a href="https://github.com/apache/shenyu/pull/8183">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8183-dark.svg">
-  <img src="./assets/apache--shenyu-8183-light.svg" width="100%" align="top" alt="#8183 fix(dubbo): keep provider identity through Dubbo bookkeeping and count inflight in a consumer filter (#8132) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-8183-light.svg" width="100%" align="top" alt="#8183 fix(dubbo): keep provider identity through Dubbo bookkeeping and count inflight in a consumer filter (#8132) [ FIX ] 2026-10-30">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8130">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8130-dark.svg">
-  <img src="./assets/apache--shenyu-8130-light.svg" width="100%" align="top" alt="#8130 feat(admin,loadbalancer): add readiness admission and explicit resume for business instances (#8042) [ FEAT ] OPEN">
+  <img src="./assets/apache--shenyu-8130-light.svg" width="100%" align="top" alt="#8130 feat(admin,loadbalancer): add readiness admission and explicit resume for business instances (#8042) [ FEAT ] 2026-10-30">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8101">
@@ -307,7 +319,7 @@
 
 </details>
 
-<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>132</b></h4>
+<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>134</b></h4>
 
 > Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
 
@@ -381,15 +393,27 @@
 
 </details>
 
-<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>34.7k</b></h4>
+<h4 align="left"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"> <b>34.9k</b></h4>
 
 > Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
 
 **What I did**: Model-layer fixes in the Python runtime: `thinking_enable` is now tri-state for the DeepSeek and DashScope chat models, so leaving it unset no longer force-sends `thinking.type=disabled` / `enable_thinking=false` and the server default applies, while explicit on/off still behaves exactly as before.
 
 <details>
-<summary>2 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 2 merged &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
+<summary>4 PRs&nbsp;&nbsp;<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"> 2 merged&nbsp;&nbsp;<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"> 2 open &nbsp;&nbsp;(&nbsp;click to expand<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">)</summary>
 
+<a href="https://github.com/agentscope-ai/agentscope/pull/3588">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3588-dark.svg">
+  <img src="./assets/agentscope-ai--agentscope-3588-light.svg" width="100%" align="top" alt="#3588 fix(ollama): implement _get_disable_thinking_kwargs so structured-output fallback can disable thinking [ FIX ] OPEN">
+</picture>
+</a>
+<a href="https://github.com/agentscope-ai/agentscope/pull/3579">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3579-dark.svg">
+  <img src="./assets/agentscope-ai--agentscope-3579-light.svg" width="100%" align="top" alt="#3579 fix(tool): let TaskList and TaskGet report read-only so explore mode allows them [ FIX ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/agentscope-ai/agentscope/pull/3398">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3398-dark.svg">
