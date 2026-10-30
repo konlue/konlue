@@ -47,6 +47,12 @@ jobs:
           assert "<picture>" in region, "no contribution card generated"
           assert not re.search(r"[\u4e00-\u9fff]", region), "generated section must stay English-only"
 
+          # GitHub wraps a bare <img> in a link to the asset's blob page and
+          # only exempts images inside <picture>. Every icon must stay wrapped.
+          for m in re.finditer(r'<img src="\./assets/ui/', text):
+              window = text[max(0, m.start() - 240):m.start()]
+              assert "<picture><source" in window, f"unwrapped icon near offset {m.start()}"
+
           svgs = sorted(Path("assets").glob("*.svg"))
           assert svgs, "no SVGs generated"
           for path in svgs:

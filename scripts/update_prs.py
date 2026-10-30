@@ -86,12 +86,23 @@ TITLE_MAX = 90  # titles longer than this are truncated with an ellipsis
 # folder/star sit in the project title line (22px, tuned under the 24px
 # contact icons so the h4 line stays compact); check/circle/chevron are
 # inline with 16px summary text, so they stay smaller.
+#
+# Every icon is wrapped in <picture>: GitHub wraps a bare <img> in a link to
+# the asset's blob page, but leaves images inside <picture> alone. Keep the
+# dark twin in sync with scripts/make_ui_dark.py.
+def _icon(name, size, alt):
+    return (f'<picture><source media="(prefers-color-scheme: dark)" '
+            f'srcset="./assets/ui/{name}-dark.svg">'
+            f'<img src="./assets/ui/{name}.svg" width="{size}" height="{size}" '
+            f'align="absmiddle" alt="{alt}"></picture>')
+
+
 UI = {
-    "folder": '<img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository">',
-    "star": '<img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars">',
-    "check": '<img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged">',
-    "circle": '<img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open">',
-    "chevron": '<img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand">',
+    "folder": _icon("folder", 22, "repository"),
+    "star": _icon("star", 22, "stars"),
+    "check": _icon("check", 16, "merged"),
+    "circle": _icon("circle", 16, "open"),
+    "chevron": _icon("chevron-down", 16, "expand"),
 }
 
 
