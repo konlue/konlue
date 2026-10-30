@@ -76,7 +76,14 @@ btn.addEventListener('click', () => { dark = !dark; apply(dark); });
 
 
 def data_uri(path: Path) -> str:
-    mime = "image/svg+xml"
+    mime = {
+        ".svg": "image/svg+xml",
+        ".gif": "image/gif",
+        ".png": "image/png",
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".webp": "image/webp",
+    }.get(path.suffix.lower(), "application/octet-stream")
     b64 = base64.b64encode(path.read_bytes()).decode("ascii")
     return f"data:{mime};base64,{b64}"
 
