@@ -508,6 +508,8 @@
 </details>
 
 [View all merged Pull Requests →](https://github.com/pulls?q=is%3Apr+is%3Apublic+author%3Akonlue+-user%3Akonlue+is%3Amerged)
+
+<br>
 <!-- OPEN_SOURCE_PRS:END -->
 
 <h2 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/server-dark.svg"><img src="./assets/ui/server.svg" width="24" height="24" align="absmiddle" alt="Stack" /></picture> Tech Stack</h2>

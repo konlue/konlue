@@ -358,6 +358,8 @@ def render(prs, projects, notes, username):
         lines.append(render_repo_block(repo, repo_prs, projects[repo]["stars"], notes, slug, username))
         lines.append("")
     lines.append(f"[View all merged Pull Requests →]({search_url})")
+    # same breathing room after the closing link, before the next <h2>
+    lines += ["", BR]
     return "\n".join(lines)
 
 
