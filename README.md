@@ -346,8 +346,14 @@
 **What I did**: Agent-layer correctness: the standalone ReAct path now forwards the interceptor-set system message and honours interceptor tool selection and dynamic registries, and cancellation actually stops work — late model stream subscriptions are dropped instead of still spending tokens, and an in-flight A2A streaming call aborts its HTTP exchange instead of leaving the bulkhead thread blocked in `readLine()`. Test coverage locks the successful-turn execution binding to the registry a model interceptor swapped in. Earlier: the opt-in ToolCall argument-validation gate with local `$ref` expansion and resource limits, the unified tool-failure status contract, and the AgentResult delivery contract with structured-output finalizer and registered business-outcome mapping. Currently working on typed lifecycle extension-point contracts, giving the engine-neutral agent API one vocabulary for its thirteen lifecycle stages instead of a single `ModelInterceptor`.
 
 <details>
-<summary>14 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 12 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 1 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>15 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 12 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 2 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/agentic-ai-java/argi/pull/352">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-352-dark.svg">
+  <img src="./assets/agentic-ai-java--argi-352-light.svg" width="100%" align="top" alt="#352 feat(agent): gate the final model request on a context window budget (issue #137) [ FEAT ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/agentic-ai-java/argi/pull/351">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-351-dark.svg">
@@ -446,7 +452,7 @@
 **What I did**: Model-layer and runtime fixes in the Python framework: `thinking_enable` is now tri-state for the DeepSeek and DashScope chat models, so leaving it unset no longer force-sends `thinking.type=disabled` / `enable_thinking=false` and the server default applies; and the realtime TTS path now surfaces a `streaming_call` failure that happens after cold start instead of silently dropping the text delta. Currently working on structured-output provider parity — letting 4xx responses fall through the fallback ladder, declaring Ollama's `ResponseError` fallback-eligible and implementing its `_get_disable_thinking_kwargs` — plus memory frontmatter that outgrows the byte cap, and `TaskList` / `TaskGet` reporting read-only so explore mode stops denying them.
 
 <details>
-<summary>8 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 3 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 3 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>8 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 4 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 2 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
 <a href="https://github.com/agentscope-ai/agentscope/pull/3621">
 <picture>
@@ -475,7 +481,7 @@
 <a href="https://github.com/agentscope-ai/agentscope/pull/3588">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3588-dark.svg">
-  <img src="./assets/agentscope-ai--agentscope-3588-light.svg" width="100%" align="top" alt="#3588 fix(ollama): implement _get_disable_thinking_kwargs so structured-output fallback can disable thinking [ FIX ] OPEN">
+  <img src="./assets/agentscope-ai--agentscope-3588-light.svg" width="100%" align="top" alt="#3588 fix(ollama): implement _get_disable_thinking_kwargs so structured-output fallback can disable thinking [ FIX ] 2026-11-02">
 </picture>
 </a>
 <a href="https://github.com/agentscope-ai/agentscope/pull/3579">
