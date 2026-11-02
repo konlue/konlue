@@ -39,7 +39,7 @@ blockquote { margin: 0 0 16px; padding: 0 1em; color: #59636e;
              border-left: .25em solid #d1d9e0; }
 body.dark blockquote { color: #9198a1; border-color: #3d444d; }
 img { vertical-align: baseline; max-width: 100%; height: auto; }
-details { margin: 0 0 16px; }
+details { margin: 0; }  /* GitHub gives <details> no margin — keep it faithful */
 summary { cursor: pointer; }
 summary::marker { color: #59636e; }
 code { font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,

@@ -45,6 +45,8 @@ README.md and the SVGs under assets/. Generated region layout:
 
     </details>
 
+    <p>[pixel divider]</p>    # only between two cards, never after the last
+
 Requirements: Python 3.9+. GITHUB_TOKEN is optional but raises the API rate
 limit; the workflow provides it automatically.
 """
@@ -104,6 +106,16 @@ UI = {
     "circle": _icon("circle", 16, "open"),
     "chevron": _icon("chevron-down", 16, "expand"),
 }
+
+# Card separator between two projects. GitHub strips <style>/<class> and gives
+# <details> no bottom margin, so the strip carries its own spacing: the upper
+# two thirds of the 1000x32 SVG are transparent and the pixel rule sits just
+# above the bottom edge (see scripts/make_divider.py). Rendered at width=100%
+# it lines up with the PR row SVGs.
+DIVIDER = ('<p align="left"><picture><source media="(prefers-color-scheme: dark)" '
+           'srcset="./assets/ui/divider-dark.svg">'
+           '<img src="./assets/ui/divider.svg" width="100%" alt="">'
+           '</picture></p>')
 
 
 def search_query(username):
@@ -342,8 +354,11 @@ def render(prs, projects, notes, username):
 
     search_url = "https://github.com/pulls?" + urlencode({"q": search_query(username) + " is:merged"})
     lines = []
-    for repo, repo_prs in repos_sorted:
+    for index, (repo, repo_prs) in enumerate(repos_sorted):
         slug = repo.replace("/", "--")
+        if index:
+            # separator between cards; the first card sits right under the <h2>
+            lines += [DIVIDER, ""]
         lines.append(render_repo_block(repo, repo_prs, projects[repo]["stars"], notes, slug, username))
         lines.append("")
     lines.append(f"[View all merged Pull Requests →]({search_url})")

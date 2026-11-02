@@ -26,24 +26,26 @@ INK = {
     "#e3b341": "#e3b341",   # star yellow reads fine on both
     "#ea4335": "#f85149",   # danger (Gmail red)
     "#2e7d32": "#3fb950",   # link green
+    "#d1d9e0": "#3d444d",   # border.default (divider rule)
+    "#afb8c1": "#6e7681",   # fg.subtle (divider blocks)
 }
 
 ICONS = ("mail", "link", "git-pull-request", "folder", "star",
-         "check", "circle", "chevron-down", "server")
+         "check", "circle", "chevron-down", "server", "divider")
 
 
 def reink(svg_text):
     changed = set()
 
     def repl(m):
-        light = m.group(1).lower()
+        attr, light = m.group(1), m.group(2).lower()
         dark = INK.get(light)
         if not dark:
             return m.group(0)
         changed.add(light)
-        return f'fill="{dark}"'
+        return f'{attr}="{dark}"'
 
-    out = re.sub(r'fill="(#[0-9a-fA-F]{6})"', repl, svg_text)
+    out = re.sub(r'(fill|stroke)="(#[0-9a-fA-F]{6})"', repl, svg_text)
     return out, changed
 
 
@@ -54,7 +56,7 @@ def main():
         if not src.exists():
             raise SystemExit(f"missing {src.relative_to(ROOT)}")
         text, changed = reink(src.read_text(encoding="utf-8"))
-        unknown = [c for c in re.findall(r'fill="(#[0-9a-fA-F]{6})"', text)
+        unknown = [c for c in re.findall(r'(?:fill|stroke)="(#[0-9a-fA-F]{6})"', text)
                    if c.lower() not in {v.lower() for v in INK.values()}]
         if unknown:
             print(f"  {name}: warning, unmapped fill(s) {sorted(set(unknown))}", file=sys.stderr)
