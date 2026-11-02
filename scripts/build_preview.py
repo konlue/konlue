@@ -88,6 +88,22 @@ def data_uri(path: Path) -> str:
     return f"data:{mime};base64,{b64}"
 
 
+def render_markdown(md: str) -> str:
+    """README.md -> HTML, so blockquotes/bold/inline code look like GitHub.
+
+    Without this the page only styled the raw HTML parts of the README and
+    printed "**What I did**" verbatim. Raw HTML blocks pass straight through,
+    which is what GitHub does too. Falls back to the raw text if the library
+    is missing (pip install markdown).
+    """
+    try:
+        import markdown
+    except ImportError:
+        print("markdown not installed - previewing raw text (pip install markdown)")
+        return md
+    return markdown.markdown(md, extensions=["fenced_code", "tables", "sane_lists"])
+
+
 def inline_assets(html: str) -> str:
     def repl(m):
         rel = m.group(2)
@@ -126,7 +142,7 @@ def tag_pictures(html: str) -> str:
 
 def main():
     md = README.read_text(encoding="utf-8")
-    body = inline_assets(md)
+    body = inline_assets(render_markdown(md))
     body = tag_pictures(body)
     page = f"""<!DOCTYPE html>
 <html lang="en">
