@@ -38,7 +38,11 @@ body.dark a { color: #4493f8; }
 blockquote { margin: 0 0 16px; padding: 0 1em; color: #59636e;
              border-left: .25em solid #d1d9e0; }
 body.dark blockquote { color: #9198a1; border-color: #3d444d; }
-img { vertical-align: baseline; max-width: 100%; height: auto; }
+img { max-width: 100%; height: auto; }
+/* GitHub sets no vertical-align on images, so the align="absmiddle" attribute
+   on the inline heading icons still applies. Honour it here or the preview
+   would sit the icons on the baseline and misreport the spacing. */
+img[align="absmiddle"] { vertical-align: middle; }
 details { margin: 0; }  /* GitHub gives <details> no margin — keep it faithful */
 summary { cursor: pointer; }
 summary::marker { color: #59636e; }

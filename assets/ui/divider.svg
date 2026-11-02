@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="32" viewBox="0 0 1000 32" role="img">
-<title>divider</title>
-<path d="M0 27H464M536 27H1000" fill="none" stroke="#d1d9e0" stroke-width="2" stroke-dasharray="8 8" shape-rendering="crispEdges"/>
-<g fill="#afb8c1" shape-rendering="crispEdges">
-<rect x="481" y="24" width="6" height="6"/>
-<rect x="497" y="24" width="6" height="6"/>
-<rect x="513" y="24" width="6" height="6"/>
-</g>
-</svg>

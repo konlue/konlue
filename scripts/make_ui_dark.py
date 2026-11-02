@@ -26,12 +26,10 @@ INK = {
     "#e3b341": "#e3b341",   # star yellow reads fine on both
     "#ea4335": "#f85149",   # danger (Gmail red)
     "#2e7d32": "#3fb950",   # link green
-    "#d1d9e0": "#3d444d",   # border.default (divider rule)
-    "#afb8c1": "#6e7681",   # fg.subtle (divider blocks)
 }
 
 ICONS = ("mail", "link", "git-pull-request", "folder", "star",
-         "check", "circle", "chevron-down", "server", "divider")
+         "check", "circle", "chevron-down", "server")
 
 
 def reink(svg_text):
