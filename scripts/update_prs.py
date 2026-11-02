@@ -45,7 +45,7 @@ README.md and the SVGs under assets/. Generated region layout:
 
     </details>
 
-    <br><br>                 # only between two cards, never after the last
+    <br>                    # only between two cards, never after the last
 
 Requirements: Python 3.9+. GITHUB_TOKEN is optional but raises the API rate
 limit; the workflow provides it automatically.
@@ -108,9 +108,10 @@ UI = {
 }
 
 # Card separator between two projects. GitHub strips <style>/<class> and gives
-# <details> no bottom margin, so the only spacing available is markup: two hard
-# breaks. No rule, no image - the repo cards are separated by air alone.
-BR = "<br><br>"
+# <details> no bottom margin, so the only spacing available is markup: one hard
+# break, which GitHub wraps in a paragraph and so brings its own line + margin.
+# No rule, no image - the repo cards are separated by air alone.
+BR = "<br>"
 
 
 def search_query(username):

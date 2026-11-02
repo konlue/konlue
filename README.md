@@ -337,7 +337,7 @@
 
 </details>
 
-<br><br>
+<br>
 
 <h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>136</b></h4>
 
@@ -443,7 +443,7 @@
 
 </details>
 
-<br><br>
+<br>
 
 <h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>35.2k</b></h4>
 
