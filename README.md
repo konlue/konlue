@@ -24,8 +24,14 @@
 **What I did**: Gateway hardening across `bootstrap`, `sdk` and `sync`: an advertised WebSocket cluster master is now validated before the client — and the `X-Shenyu-Sync-Token` it carries — is constructed, so a trusted `wss://` seed can no longer redirect the gateway to another host or down to plaintext `ws://`. Earlier: `divide` sticky session affinity with deterministic key selection, draining and readiness admission so an instance can stop taking new traffic without deregistering, Dubbo provider identity and inflight accounting, MQTT and gRPC connection lifecycle, registry cleanup and dependency slimming. Currently working on the failover accounting and credential-exposure thread: attributing each HTTP attempt's outcome to its own circuit breaker, binding `leastActive` reservations to the attempt that actually owns them, redacting configuration and sync logs down to an allowlist, and closing the controllers still mapped under `/actuator` that expose raw runtime configuration anonymously.
 
 <details>
-<summary>51 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 44 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 6 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>52 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 44 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 7 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8291">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8291-dark.svg">
+  <img src="./assets/apache--shenyu-8291-light.svg" width="100%" align="top" alt="#8291 [ISSUE #8208] Observe actual selector and rule matching decisions without reevaluation [ PR ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8283">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8283-dark.svg">
@@ -339,7 +345,7 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>136</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>137</b></h4>
 
 > Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
 
@@ -445,15 +451,21 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>35.2k</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>35.3k</b></h4>
 
 > Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
 
 **What I did**: Model-layer and runtime fixes in the Python framework: `thinking_enable` is now tri-state for the DeepSeek and DashScope chat models, so leaving it unset no longer force-sends `thinking.type=disabled` / `enable_thinking=false` and the server default applies; and the realtime TTS path now surfaces a `streaming_call` failure that happens after cold start instead of silently dropping the text delta. Currently working on structured-output provider parity — letting 4xx responses fall through the fallback ladder, declaring Ollama's `ResponseError` fallback-eligible and implementing its `_get_disable_thinking_kwargs` — plus memory frontmatter that outgrows the byte cap, and `TaskList` / `TaskGet` reporting read-only so explore mode stops denying them.
 
 <details>
-<summary>8 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 4 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 2 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>9 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 5 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 2 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/agentscope-ai/agentscope/pull/3668">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3668-dark.svg">
+  <img src="./assets/agentscope-ai--agentscope-3668-light.svg" width="100%" align="top" alt="#3668 fix(tool): keep an attached cp/mv target directory visible to Bash path checks [ FIX ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/agentscope-ai/agentscope/pull/3621">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3621-dark.svg">
@@ -463,7 +475,7 @@
 <a href="https://github.com/agentscope-ai/agentscope/pull/3617">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3617-dark.svg">
-  <img src="./assets/agentscope-ai--agentscope-3617-light.svg" width="100%" align="top" alt="#3617 fix(memory): extend the frontmatter read to the closing fence when the byte cap cuts it off [ FIX ] OPEN">
+  <img src="./assets/agentscope-ai--agentscope-3617-light.svg" width="100%" align="top" alt="#3617 fix(memory): extend the frontmatter read to the closing fence when the byte cap cuts it off [ FIX ] 2026-11-03">
 </picture>
 </a>
 <a href="https://github.com/agentscope-ai/agentscope/pull/3615">
