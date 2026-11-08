@@ -24,8 +24,20 @@
 **What I did**: Gateway hardening across `bootstrap`, `sdk` and `sync`: an advertised WebSocket cluster master is now validated before the client — and the `X-Shenyu-Sync-Token` it carries — is constructed, so a trusted `wss://` seed can no longer redirect the gateway to another host or down to plaintext `ws://`. Earlier: `divide` sticky session affinity with deterministic key selection, draining and readiness admission so an instance can stop taking new traffic without deregistering, Dubbo provider identity and inflight accounting, MQTT and gRPC connection lifecycle, registry cleanup and dependency slimming. Currently working on the failover accounting and credential-exposure thread: attributing each HTTP attempt's outcome to its own circuit breaker, binding `leastActive` reservations to the attempt that actually owns them, redacting configuration and sync logs down to an allowlist, and closing the controllers still mapped under `/actuator` that expose raw runtime configuration anonymously.
 
 <details>
-<summary>55 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 44 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 10 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>57 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 44 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 12 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8363">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8363-dark.svg">
+  <img src="./assets/apache--shenyu-8363-light.svg" width="100%" align="top" alt="#8363 [ISSUE #8039] Add the opt-in server-issued registration lease [ PR ] OPEN">
+</picture>
+</a>
+<a href="https://github.com/apache/shenyu/pull/8350">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8350-dark.svg">
+  <img src="./assets/apache--shenyu-8350-light.svg" width="100%" align="top" alt="#8350 [ISSUE #8195] Bound server-produced SSE queues and slow-consumer session lifetime [ PR ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8341">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8341-dark.svg">
@@ -370,8 +382,14 @@
 **What I did**: Agent-layer correctness: the standalone ReAct path now forwards the interceptor-set system message and honours interceptor tool selection and dynamic registries, and cancellation actually stops work — late model stream subscriptions are dropped instead of still spending tokens, and an in-flight A2A streaming call aborts its HTTP exchange instead of leaving the bulkhead thread blocked in `readLine()`. Test coverage locks the successful-turn execution binding to the registry a model interceptor swapped in. Earlier: the opt-in ToolCall argument-validation gate with local `$ref` expansion and resource limits, the unified tool-failure status contract, and the AgentResult delivery contract with structured-output finalizer and registered business-outcome mapping. Currently working on typed lifecycle extension-point contracts, giving the engine-neutral agent API one vocabulary for its thirteen lifecycle stages instead of a single `ModelInterceptor`.
 
 <details>
-<summary>17 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 16 merged &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>18 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 16 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 1 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/agentic-ai-java/argi/pull/359">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-359-dark.svg">
+  <img src="./assets/agentic-ai-java--argi-359-light.svg" width="100%" align="top" alt="#359 fix(workflow): validate declared input and output schemas at publish and run boundaries (issue #274) [ FIX ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/agentic-ai-java/argi/pull/357">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-357-dark.svg">
@@ -481,7 +499,7 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>35.5k</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>35.6k</b></h4>
 
 > Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
 
