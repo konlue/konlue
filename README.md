@@ -24,8 +24,14 @@
 **What I did**: Gateway hardening across `bootstrap`, `sdk` and `sync`: an advertised WebSocket cluster master is now validated before the client — and the `X-Shenyu-Sync-Token` it carries — is constructed, so a trusted `wss://` seed can no longer redirect the gateway to another host or down to plaintext `ws://`. Earlier: `divide` sticky session affinity with deterministic key selection, draining and readiness admission so an instance can stop taking new traffic without deregistering, Dubbo provider identity and inflight accounting, MQTT and gRPC connection lifecycle, registry cleanup and dependency slimming. Currently working on the failover accounting and credential-exposure thread: attributing each HTTP attempt's outcome to its own circuit breaker, binding `leastActive` reservations to the attempt that actually owns them, redacting configuration and sync logs down to an allowlist, and closing the controllers still mapped under `/actuator` that expose raw runtime configuration anonymously.
 
 <details>
-<summary>57 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 44 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 12 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>58 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 44 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 13 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8365">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8365-dark.svg">
+  <img src="./assets/apache--shenyu-8365-light.svg" width="100%" align="top" alt="#8365 [ISSUE #8300] Add the opt-in adaptive scoring strategy for divide [ PR ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8363">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8363-dark.svg">
@@ -375,15 +381,27 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>142</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>145</b></h4>
 
 > Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
 
 **What I did**: Agent-layer correctness: the standalone ReAct path now forwards the interceptor-set system message and honours interceptor tool selection and dynamic registries, and cancellation actually stops work — late model stream subscriptions are dropped instead of still spending tokens, and an in-flight A2A streaming call aborts its HTTP exchange instead of leaving the bulkhead thread blocked in `readLine()`. Test coverage locks the successful-turn execution binding to the registry a model interceptor swapped in. Earlier: the opt-in ToolCall argument-validation gate with local `$ref` expansion and resource limits, the unified tool-failure status contract, and the AgentResult delivery contract with structured-output finalizer and registered business-outcome mapping. Currently working on typed lifecycle extension-point contracts, giving the engine-neutral agent API one vocabulary for its thirteen lifecycle stages instead of a single `ModelInterceptor`.
 
 <details>
-<summary>18 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 16 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 1 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>20 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 18 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 1 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/agentic-ai-java/argi/pull/361">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-361-dark.svg">
+  <img src="./assets/agentic-ai-java--argi-361-light.svg" width="100%" align="top" alt="#361 feat(runtime): add freshness-gated persisted run state gauges (issue #331) [ FEAT ] 2026-11-08">
+</picture>
+</a>
+<a href="https://github.com/agentic-ai-java/argi/pull/360">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-360-dark.svg">
+  <img src="./assets/agentic-ai-java--argi-360-light.svg" width="100%" align="top" alt="#360 fix(workflow): detect subflow reference cycles at publish and bound the run call chain (issue #273) [ FIX ] 2026-11-08">
+</picture>
+</a>
 <a href="https://github.com/agentic-ai-java/argi/pull/359">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-359-dark.svg">
@@ -506,8 +524,20 @@
 **What I did**: Model-layer and runtime fixes in the Python framework: `thinking_enable` is now tri-state for the DeepSeek and DashScope chat models, so leaving it unset no longer force-sends `thinking.type=disabled` / `enable_thinking=false` and the server default applies; and the realtime TTS path now surfaces a `streaming_call` failure that happens after cold start instead of silently dropping the text delta. Currently working on structured-output provider parity — letting 4xx responses fall through the fallback ladder, declaring Ollama's `ResponseError` fallback-eligible and implementing its `_get_disable_thinking_kwargs` — plus memory frontmatter that outgrows the byte cap, and `TaskList` / `TaskGet` reporting read-only so explore mode stops denying them.
 
 <details>
-<summary>11 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 5 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 4 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>13 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 5 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 6 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/agentscope-ai/agentscope/pull/3853">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3853-dark.svg">
+  <img src="./assets/agentscope-ai--agentscope-3853-light.svg" width="100%" align="top" alt="#3853 fix(app): mark offloaded tool placeholders machine-readable and report stopped tools as interrupted [ FIX ] OPEN">
+</picture>
+</a>
+<a href="https://github.com/agentscope-ai/agentscope/pull/3848">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3848-dark.svg">
+  <img src="./assets/agentscope-ai--agentscope-3848-light.svg" width="100%" align="top" alt="#3848 fix(storage): keep redis upserts and their index writes atomic [ FIX ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/agentscope-ai/agentscope/pull/3803">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3803-dark.svg">
