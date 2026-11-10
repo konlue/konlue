@@ -24,12 +24,18 @@
 **What I did**: Gateway hardening across `sync`, `divide` and the connection plugins: trusted WebSocket cluster masters are validated before their credentials are used, `divide` gained sticky-session affinity plus draining and readiness admission, and Dubbo, MQTT and gRPC lifecycles were tightened. The rest is failure-path correctness — heartbeats, identity resolution, header ownership per invocation.
 
 <details>
-<summary>58 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 44 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 13 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>59 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 50 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 8 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8378">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8378-dark.svg">
+  <img src="./assets/apache--shenyu-8378-light.svg" width="100%" align="top" alt="#8378 [ISSUE #8255] Expose a bounded normalized request view before governance [ PR ] 2026-11-10">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8365">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8365-dark.svg">
-  <img src="./assets/apache--shenyu-8365-light.svg" width="100%" align="top" alt="#8365 [ISSUE #8300] Add the opt-in adaptive scoring strategy for divide [ PR ] OPEN">
+  <img src="./assets/apache--shenyu-8365-light.svg" width="100%" align="top" alt="#8365 [ISSUE #8300] Add the opt-in adaptive scoring strategy for divide [ PR ] 2026-11-10">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8363">
@@ -53,19 +59,19 @@
 <a href="https://github.com/apache/shenyu/pull/8305">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8305-dark.svg">
-  <img src="./assets/apache--shenyu-8305-light.svg" width="100%" align="top" alt="#8305 [ISSUE #8037] Validate sticky session configuration at the management plane and cover cross-replica verification [ PR ] OPEN">
+  <img src="./assets/apache--shenyu-8305-light.svg" width="100%" align="top" alt="#8305 [ISSUE #8037] Validate sticky session configuration at the management plane and cover cross-replica verification [ PR ] 2026-11-10">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8299">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8299-dark.svg">
-  <img src="./assets/apache--shenyu-8299-light.svg" width="100%" align="top" alt="#8299 [ISSUE #8194] Add opt-in named upstream connection-pool groups for workload isolation [ PR ] OPEN">
+  <img src="./assets/apache--shenyu-8299-light.svg" width="100%" align="top" alt="#8299 [ISSUE #8194] Add opt-in named upstream connection-pool groups for workload isolation [ PR ] 2026-11-10">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8291">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8291-dark.svg">
-  <img src="./assets/apache--shenyu-8291-light.svg" width="100%" align="top" alt="#8291 [ISSUE #8208] Observe actual selector and rule matching decisions without reevaluation [ PR ] OPEN">
+  <img src="./assets/apache--shenyu-8291-light.svg" width="100%" align="top" alt="#8291 [ISSUE #8208] Observe actual selector and rule matching decisions without reevaluation [ PR ] 2026-11-10">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8283">
@@ -89,7 +95,7 @@
 <a href="https://github.com/apache/shenyu/pull/8251">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8251-dark.svg">
-  <img src="./assets/apache--shenyu-8251-light.svg" width="100%" align="top" alt="#8251 fix(divide): bind failover inflight accounting to each attempt&#x27;s response lifetime (#8158) [ FIX ] OPEN">
+  <img src="./assets/apache--shenyu-8251-light.svg" width="100%" align="top" alt="#8251 fix(divide): bind failover inflight accounting to each attempt&#x27;s response lifetime (#8158) [ FIX ] 2026-11-10">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8242">
@@ -381,7 +387,7 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>145</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentic-ai-java/argi"><b>agentic-ai-java/argi</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>149</b></h4>
 
 > Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
 
@@ -517,19 +523,25 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>35.6k</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>35.7k</b></h4>
 
 > Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
 
 **What I did**: Model-layer parity in the Python framework: `thinking_enable` is now tri-state for DeepSeek and DashScope, so an unset value no longer force-sends `thinking.type=disabled`, and realtime TTS surfaces `streaming_call` failures after cold start instead of dropping the text delta. Next: structured-output fallback for Ollama.
 
 <details>
-<summary>13 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 5 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 6 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>14 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 5 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 7 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/agentscope-ai/agentscope/pull/3899">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3899-dark.svg">
+  <img src="./assets/agentscope-ai--agentscope-3899-light.svg" width="100%" align="top" alt="#3899 feat(app): let tools opt out of background offloading or override the offload timeout [ FEAT ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/agentscope-ai/agentscope/pull/3853">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3853-dark.svg">
-  <img src="./assets/agentscope-ai--agentscope-3853-light.svg" width="100%" align="top" alt="#3853 fix(app): mark offloaded tool placeholders machine-readable and report stopped tools as interrupted [ FIX ] OPEN">
+  <img src="./assets/agentscope-ai--agentscope-3853-light.svg" width="100%" align="top" alt="#3853 feat(app): mark offloaded tool placeholders with structured metadata [ FEAT ] OPEN">
 </picture>
 </a>
 <a href="https://github.com/agentscope-ai/agentscope/pull/3848">
