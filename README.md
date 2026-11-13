@@ -24,7 +24,7 @@
 **What I did**: Gateway hardening across `sync`, `divide` and the connection plugins: trusted WebSocket cluster masters are validated before their credentials are used, `divide` gained sticky-session affinity plus draining and readiness admission, and Dubbo, MQTT and gRPC lifecycles were tightened. The rest is failure-path correctness — heartbeats, identity resolution, header ownership per invocation.
 
 <details>
-<summary>64 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 50 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 13 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>64 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 51 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 12 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
 <a href="https://github.com/apache/shenyu/pull/8456">
 <picture>
@@ -53,7 +53,7 @@
 <a href="https://github.com/apache/shenyu/pull/8407">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8407-dark.svg">
-  <img src="./assets/apache--shenyu-8407-light.svg" width="100%" align="top" alt="#8407 [ISSUE #8257] Add schema-validated structured output with bounded opt-in repair [ PR ] OPEN">
+  <img src="./assets/apache--shenyu-8407-light.svg" width="100%" align="top" alt="#8407 [ISSUE #8257] Add schema-validated structured output with bounded opt-in repair [ PR ] 2026-11-13">
 </picture>
 </a>
 <a href="https://github.com/apache/shenyu/pull/8378">
@@ -424,7 +424,7 @@
 **What I did**: Agent-layer correctness in the standalone ReAct path: interceptor-set system messages now reach model requests, interceptor tool selection and dynamic registries are honoured, and cancellation actually stops work — late stream subscriptions are dropped and in-flight A2A calls abort their HTTP exchange. Earlier: typed tool-argument validation, a unified tool-failure contract and the AgentResult delivery contract.
 
 <details>
-<summary>20 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 18 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 1 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>20 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 19 merged &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
 <a href="https://github.com/agentic-ai-java/argi/pull/361">
 <picture>
@@ -441,7 +441,7 @@
 <a href="https://github.com/agentic-ai-java/argi/pull/359">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-359-dark.svg">
-  <img src="./assets/agentic-ai-java--argi-359-light.svg" width="100%" align="top" alt="#359 fix(workflow): validate declared input and output schemas at publish and run boundaries (issue #274) [ FIX ] OPEN">
+  <img src="./assets/agentic-ai-java--argi-359-light.svg" width="100%" align="top" alt="#359 fix(workflow): validate declared input and output schemas at publish and run boundaries (issue #274) [ FIX ] 2026-11-12">
 </picture>
 </a>
 <a href="https://github.com/agentic-ai-java/argi/pull/357">
@@ -553,14 +553,14 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>35.8k</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>35.9k</b></h4>
 
 > Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
 
 **What I did**: Model-layer parity in the Python framework: `thinking_enable` is now tri-state for DeepSeek and DashScope, so an unset value no longer force-sends `thinking.type=disabled`, and realtime TTS surfaces `streaming_call` failures after cold start instead of dropping the text delta. Next: structured-output fallback for Ollama.
 
 <details>
-<summary>14 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 6 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 6 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>14 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 7 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 5 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
 <a href="https://github.com/agentscope-ai/agentscope/pull/3899">
 <picture>
@@ -589,7 +589,7 @@
 <a href="https://github.com/agentscope-ai/agentscope/pull/3732">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentscope-ai--agentscope-3732-dark.svg">
-  <img src="./assets/agentscope-ai--agentscope-3732-light.svg" width="100%" align="top" alt="#3732 fix(realtime): restart the downlink pump after it crashes [ FIX ] OPEN">
+  <img src="./assets/agentscope-ai--agentscope-3732-light.svg" width="100%" align="top" alt="#3732 fix(realtime): restart the downlink pump after it crashes [ FIX ] 2026-11-12">
 </picture>
 </a>
 <a href="https://github.com/agentscope-ai/agentscope/pull/3668">
