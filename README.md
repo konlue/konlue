@@ -448,7 +448,7 @@
 **What I did**: Agent-layer correctness in the standalone ReAct path: interceptor-set system messages now reach model requests, interceptor tool selection and dynamic registries are honoured, and cancellation actually stops work — late stream subscriptions are dropped and in-flight A2A calls abort their HTTP exchange. Earlier: typed tool-argument validation, a unified tool-failure contract and the AgentResult delivery contract.
 
 <details>
-<summary>22 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 19 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 2 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>22 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 20 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 1 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
 <a href="https://github.com/agentic-ai-java/argi/pull/370">
 <picture>
@@ -459,7 +459,7 @@
 <a href="https://github.com/agentic-ai-java/argi/pull/369">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-369-dark.svg">
-  <img src="./assets/agentic-ai-java--argi-369-light.svg" width="100%" align="top" alt="#369 fix(scheduling): make task registration mutually exclusive with shutdown (issue #216) [ FIX ] OPEN">
+  <img src="./assets/agentic-ai-java--argi-369-light.svg" width="100%" align="top" alt="#369 fix(scheduling): make task registration mutually exclusive with shutdown (issue #216) [ FIX ] 2026-11-15">
 </picture>
 </a>
 <a href="https://github.com/agentic-ai-java/argi/pull/361">
@@ -589,7 +589,7 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>36k</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>36.1k</b></h4>
 
 > Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
 
