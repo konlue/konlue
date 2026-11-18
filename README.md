@@ -21,7 +21,7 @@
 
 > Java-native API gateway for service proxy, protocol conversion and API governance.
 
-**What I did**: Gateway hardening across `sync`, `divide` and the connection plugins: trusted WebSocket cluster masters are validated before their credentials are used, `divide` gained sticky-session affinity plus draining and readiness admission, and Dubbo, MQTT and gRPC lifecycles were tightened. The rest is failure-path correctness — heartbeats, identity resolution, header ownership per invocation.
+**What I did**: Request-path cost in the gateway core: four hot-path helpers stopped allocating per request, the plugin timing key is built once in `after`, retries reuse an immutable backoff template, and `NettyHttpClientPlugin` copies upstream response headers natively instead of rebuilding them. Alongside, AI governance gained a schema-validated structured-output path with bounded repair and a normalized request view.
 
 <details>
 <summary>71 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 52 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 15 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
@@ -463,7 +463,7 @@
 
 > Agent Runtime and Graph Intelligence: a Java agent framework built on Spring AI, with a graph runtime, multi-agent workflows and visual administration.
 
-**What I did**: Agent-layer correctness in the standalone ReAct path: interceptor-set system messages now reach model requests, interceptor tool selection and dynamic registries are honoured, and cancellation actually stops work — late stream subscriptions are dropped and in-flight A2A calls abort their HTTP exchange. Earlier: typed tool-argument validation, a unified tool-failure contract and the AgentResult delivery contract.
+**What I did**: Runtime lifecycle and publish-time validation: task registration is now mutually exclusive with shutdown and scheduled start/stop are atomic state transitions, workflow publishing rejects subflow reference cycles and mismatched IO schemas before a run can start, and persisted run-state gauges are freshness-gated. Model calls are bounded by a deadline-aware retry policy and a context-window budget.
 
 <details>
 <summary>22 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 20 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 1 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
@@ -611,7 +611,7 @@
 
 > Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
 
-**What I did**: Model-layer parity in the Python framework: `thinking_enable` is now tri-state for DeepSeek and DashScope, so an unset value no longer force-sends `thinking.type=disabled`, and realtime TTS surfaces `streaming_call` failures after cold start instead of dropping the text delta. Next: structured-output fallback for Ollama.
+**What I did**: Background tool execution in the Python framework: offloaded tool placeholders carry structured metadata so a running job is distinguishable from a finished one, tools can opt out of offloading or override its timeout, and the realtime downlink pump restarts itself after a crash instead of going silent. Next: keeping the local workdir strictly inside the workspace base directory.
 
 <details>
 <summary>15 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 7 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 6 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
