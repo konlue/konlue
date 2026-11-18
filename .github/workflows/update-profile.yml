@@ -67,5 +67,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md assets/
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: refresh open-source PR section"
+          # update_prs.py also rewrites scripts/project-stars.json, which is a
+          # cache and is deliberately not committed. Guard on the staged diff
+          # only: a plain `git diff --quiet` sees that cache file and sends the
+          # job into `git commit` with nothing staged, failing the run whenever
+          # the README already matched what the script generated.
+          git diff --staged --quiet || git commit -m "chore: refresh open-source PR section"
           git push
