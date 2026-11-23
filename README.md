@@ -24,8 +24,20 @@
 **What I did**: Request-path cost in the gateway core: four hot-path helpers stopped allocating per request, the plugin timing key is built once in `after`, retries reuse an immutable backoff template, and `NettyHttpClientPlugin` copies upstream response headers natively instead of rebuilding them. Alongside, AI governance gained a schema-validated structured-output path with bounded repair and a normalized request view.
 
 <details>
-<summary>72 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 52 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 16 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>74 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 52 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 18 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/apache/shenyu/pull/8546">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8546-dark.svg">
+  <img src="./assets/apache--shenyu-8546-light.svg" width="100%" align="top" alt="#8546 [ISSUE #8429] Bridge Spring application readiness and shutdown to the instance serving state [ PR ] OPEN">
+</picture>
+</a>
+<a href="https://github.com/apache/shenyu/pull/8544">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8544-dark.svg">
+  <img src="./assets/apache--shenyu-8544-light.svg" width="100%" align="top" alt="#8544 [ISSUE #8430] Expose bounded client registration progress and health diagnostics [ PR ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/apache/shenyu/pull/8539">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/apache--shenyu-8539-dark.svg">
@@ -472,7 +484,7 @@
 **What I did**: Runtime lifecycle and publish-time validation: task registration is now mutually exclusive with shutdown and scheduled start/stop are atomic state transitions, workflow publishing rejects subflow reference cycles and mismatched IO schemas before a run can start, and persisted run-state gauges are freshness-gated. Model calls are bounded by a deadline-aware retry policy and a context-window budget.
 
 <details>
-<summary>24 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 20 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 3 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>24 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 21 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 2 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
 <a href="https://github.com/agentic-ai-java/argi/pull/381">
 <picture>
@@ -489,7 +501,7 @@
 <a href="https://github.com/agentic-ai-java/argi/pull/370">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-370-dark.svg">
-  <img src="./assets/agentic-ai-java--argi-370-light.svg" width="100%" align="top" alt="#370 fix(scheduling): make ScheduledAgentTask start/stop atomic state transitions (issue #215) [ FIX ] OPEN">
+  <img src="./assets/agentic-ai-java--argi-370-light.svg" width="100%" align="top" alt="#370 fix(scheduling): make ScheduledAgentTask start/stop atomic state transitions (issue #215) [ FIX ] 2026-11-22">
 </picture>
 </a>
 <a href="https://github.com/agentic-ai-java/argi/pull/369">
@@ -625,7 +637,7 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>36.4k</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>36.5k</b></h4>
 
 > Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
 
