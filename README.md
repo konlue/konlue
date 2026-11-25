@@ -637,7 +637,7 @@
 
 <br>
 
-<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>36.6k</b></h4>
+<h4 align="left"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/folder-dark.svg"><img src="./assets/ui/folder.svg" width="22" height="22" align="absmiddle" alt="repository"></picture> <a href="https://github.com/agentscope-ai/agentscope"><b>agentscope-ai/agentscope</b></a> &nbsp;&nbsp;&nbsp;&nbsp; <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/star-dark.svg"><img src="./assets/ui/star.svg" width="22" height="22" align="absmiddle" alt="stars"></picture> <b>36.7k</b></h4>
 
 > Build and run agents you can see, understand and trust - a Python framework for multi-agent applications.
 
