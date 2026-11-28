@@ -496,8 +496,14 @@
 **What I did**: Runtime lifecycle and publish-time validation: task registration is now mutually exclusive with shutdown and scheduled start/stop are atomic state transitions, workflow publishing rejects subflow reference cycles and mismatched IO schemas before a run can start, and persisted run-state gauges are freshness-gated. Model calls are bounded by a deadline-aware retry policy and a context-window budget.
 
 <details>
-<summary>25 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 21 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 3 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
+<summary>26 PRs&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/check-dark.svg"><img src="./assets/ui/check.svg" width="16" height="16" align="absmiddle" alt="merged"></picture> 21 merged&nbsp;&nbsp;<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/circle-dark.svg"><img src="./assets/ui/circle.svg" width="16" height="16" align="absmiddle" alt="open"></picture> 4 open &nbsp;&nbsp;(&nbsp;click to expand<picture><source media="(prefers-color-scheme: dark)" srcset="./assets/ui/chevron-down-dark.svg"><img src="./assets/ui/chevron-down.svg" width="16" height="16" align="absmiddle" alt="expand"></picture>)</summary>
 
+<a href="https://github.com/agentic-ai-java/argi/pull/393">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-393-dark.svg">
+  <img src="./assets/agentic-ai-java--argi-393-light.svg" width="100%" align="top" alt="#393 feat(tools): rebuild the cross-repo compatibility gate with explicit candidate binding (issue #229) [ FEAT ] OPEN">
+</picture>
+</a>
 <a href="https://github.com/agentic-ai-java/argi/pull/389">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/agentic-ai-java--argi-389-dark.svg">
